@@ -1,661 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRA - Computing Research Association</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .rainbow-gradient {
-            background: linear-gradient(to right, #2563eb, #7c3aed, #ec4899, #ef4444, #f97316, #eab308, #22c55e, #2563eb);
-        }
-        
-        .nsf-logo {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-        }
-        
-        .level-up-badge {
-            background: #f97316;
-            transform: rotate(12deg);
-        }
-        
-        .nav-item {
-            position: relative;
-        }
-        
-        .nav-item:hover {
-            background-color: #1d4ed8;
-        }
-        
-        .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            min-width: 200px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border-radius: 0.375rem;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 50;
-        }
-        
-        .nav-item:hover .dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .dropdown a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: #374151;
-            text-decoration: none;
-            transition: background-color 0.2s;
-        }
-        
-        .dropdown a:hover {
-            background-color: #f3f4f6;
-        }
-        
-        .sidebar-item:hover {
-            background-color: #e5e7eb;
-        }
-        
-        .mobile-dropdown {
-            display: none;
-            background-color: #1e40af;
-            padding-left: 1rem;
-        }
-        
-        .mobile-dropdown.active {
-            display: block;
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu {
-                display: none;
-            }
-            
-            .mobile-menu.active {
-                display: block;
-            }
-            
-            .dropdown {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                background: transparent;
-                min-width: auto;
-            }
-            
-            .banner-images {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .banner-images img {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-        
-        @media (max-width: 640px) {
-            .footer-logos {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRA - Computing Research Association</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .rainbow-gradient { background: linear-gradient(to right, #2563eb, #7c3aed, #ec4899, #ef4444, #f97316, #eab308, #22c55e, #2563eb); }
+    .nav-item:hover { background-color: #1d4ed8; }
+    .sidebar-item:hover { background-color: #e5e7eb; }
+  </style>
 </head>
 <body class="min-h-screen bg-gray-100">
-    <!-- Rainbow header stripe -->
-    <div class="h-2 rainbow-gradient"></div>
+  <!-- Rainbow header stripe -->
+  <div class="h-2 rainbow-gradient"></div>
 
-    <!-- Header -->
-    <div class="bg-white px-4 sm:px-6 py-4">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <!-- CRA Logo -->
-                <img src="https://s8968.pcdn.co/wp-content/uploads/2015/05/logo.png" alt="CRA Logo" class="h-16 w-auto">
-                <div class="hidden sm:block">
-                    <h1 class="text-2xl font-bold text-gray-800">CRA</h1>
-                    <p class="text-sm text-gray-600">Computing Research Association</p>
-                </div>
-            </div>
-            <div class="text-right hidden lg:block">
-                <p class="text-blue-600 font-medium">Uniting industry, academia and government to advance</p>
-                <p class="text-blue-600 font-medium">computing research and change the world.</p>
-            </div>
+  <!-- Header -->
+  <div class="bg-white px-4 sm:px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <img src="https://s8968.pcdn.co/wp-content/uploads/2015/05/logo.png" alt="CRA Logo" class="h-16 w-auto">
+        <div class="hidden sm:block">
+          <h1 class="text-2xl font-bold text-gray-800">CRA</h1>
+          <p class="text-sm text-gray-600">Computing Research Association</p>
         </div>
+      </div>
+      <div class="text-right hidden lg:block">
+        <p class="text-blue-600 font-medium">Uniting industry, academia and government to advance</p>
+        <p class="text-blue-600 font-medium">computing research and change the world.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="bg-blue-700 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex justify-between items-center">
+        <div class="hidden lg:flex space-x-6">
+          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">ABOUT</a>
+          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">GOVERNMENT AFFAIRS</a>
+          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">COMMITTEES</a>
+          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">PROGRAMS</a>
+          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">EVENTS</a>
+          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">AWARDS</a>
+          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">RESOURCES</a>
+          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">DATA</a>
+          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">STATEMENTS/POSITIONS</a>
+          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">JOBS</a>
+        </div>
+        <button id="mobile-menu-btn" class="lg:hidden py-4 px-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-menu lg:hidden pb-4 hidden">
+        <a href="#" class="block py-2 px-4 hover:bg-blue-600">ABOUT</a>
+        <a href="#" class="block py-2 px-4 hover:bg-blue-600">GOVERNMENT AFFAIRS</a>
+        <a href="#" class="block py-2 px-4 hover:bg-blue-600">COMMITTEES</a>
+        <a href="#" class="block py-2 px-4 hover:bg-blue-600">PROGRAMS</a>
+        <a href="#" class="block py-2 px-4 hover:bg-blue-600">EVENTS</a>
+        <a href="#" class="block py-2 px-4 hover:bg-blue-600">AWARDS</a>
+        <a href="#" class="block py-2 px-4 hover:bg-blue-600">RESOURCES</a>
+        <a href="#" class="block py-2 px-4 hover:bg-blue-600">DATA</a>
+        <a href="#" class="block py-2 px-4 hover:bg-blue-600">STATEMENTS/POSITIONS</a>
+        <a href="#" class="block py-2 px-4 hover:bg-blue-600">JOBS</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <!-- Sidebar -->
+    <aside class="lg:col-span-1">
+      <nav class="space-y-2">
+        <a href="#overview" data-target="overview" class="sidebar-item block py-2 px-4 rounded bg-blue-100 text-blue-700">Overview</a>
+        <a href="#working-group" data-target="working-group" class="sidebar-item block py-2 px-4 rounded">Working Group</a>
+        <a href="#roundtable" data-target="roundtable" class="sidebar-item block py-2 px-4 rounded">RoundTable Discussion</a>
+        <a href="#workshop-info" data-target="workshop-info" class="sidebar-item block py-2 px-4 rounded">Workshop Information</a>
+        <a href="#agenda-resources" data-target="agenda-resources" class="sidebar-item block py-2 px-4 rounded">Workshop Agenda & Resources</a>
+        <a href="#registration" data-target="registration" class="sidebar-item block py-2 px-4 rounded">Workshop Registration</a>
+        <a href="#sponsors" data-target="sponsors" class="sidebar-item block py-2 px-4 rounded">Sponsors and Partners</a>
+      </nav>
+    </aside>
+
+    <!-- Content Area -->
+    <section class="lg:col-span-3" id="tab-contents">
+
+      <!-- Overview Tab -->
+      <div id="overview" class="tab-content">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Overview</h2>
+        <p class="mb-4">Capacity and Community for Research-Emerging Institutions with Large Computing Programs (Conference) combines virtual and in-person engagement, the project fosters collaboration, enhances accessibility, and supports faculty in expanding AI education at Research-Emerging Institutions with Large Computing Programs.</p>
+        <p class="mb-2"><strong>Goal:</strong></p>
+        <p class="mb-4">This Research-Emerging Institutions with Large Computing Programs NAIRR Conference aims to expand the NAIRR Pilot community to include educators bringing inclusive AI-educational experiences to classrooms nationwide. This conference has four goals:</p>
+        <ul class="list-disc list-inside mb-6">
+          <li>Goal 1: Facilitate increased instructional capacity and a community of practice among faculty at research-emerging institutions with large computing programs who will implement new AI courses or modules into undergraduate and master's educational pathways.</li>
+          <li>Goal 2: Identify a shared understanding of best practices for inclusive AI education relevant to research-emerging institutions with large computing programs.</li>
+          <li>Goal 3: Improve confidence of instructors at research-emerging institutions with large computing programs in utilizing NAIRR Pilot resources that are listed on nairrpilot.org.</li>
+          <li>Goal 4: Develop plans for including AI content in courses at research-emerging institutions with large computing programs, with the use of NAIRR Pilot resources when computational resources are needed.</li>
+        </ul>
+        <h3 class="text-xl font-bold text-blue-700 mb-4">A Collaborative Effort:</h3>
+        <p class="mb-6">Northern Kentucky University in collaboration with the Computing Research Association, Texas State University, and Kennesaw State University will engage faculty at Research-Emerging Institutions with Large Computing Programs in a series of virtual roundtable discussions and an in-person workshop to build a community of practice focused on increasing Artificial Intelligence education capacity and utilizing shared resources in the National AI Research Resource (NAIRR) Pilot. As part of a broader national effort spanning different types of institutions of higher education, this initiative seeks to expand the NAIRR Pilot community by equipping educators with the tools and knowledge needed to bring AI learning experiences into classrooms nationwide.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <img src="https://cdaonline.org/wp-content/uploads/2023/11/onlinemeetingreduced-e1713834114424.jpg" alt="Online Roundtables" class="w-full rounded-lg shadow">
+            <p class="mt-2 text-center text-sm font-medium">Online Roundtables</p>
+          </div>
+          <div>
+            <img src="https://www.glowbl.com/blog/wp-content/uploads/2024/04/4-800x671.png" alt="Workshop" class="w-full rounded-lg shadow">
+            <p class="mt-2 text-center text-sm font-medium">Workshop</p>
+          </div>
+          <div>
+            <img src="https://www.innovationnewsnetwork.com/wp-content/uploads/2024/02/shutterstockPhonlamai-Photo_1058815598.jpg" alt="AI Education" class="w-full rounded-lg shadow">
+            <p class="mt-2 text-center text-sm font-medium">AI Education</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Working Group Tab -->
+<div id="working-group" class="tab-content hidden">
+  <h2 class="text-2xl font-bold text-blue-700 mb-6">Working Group</h2>
+  <div class="space-y-6">
+    <!-- Traian Marius Truta -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-4">Traian Marius Truta (PI, Northern Kentucky University)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img
+          src="https://websites.nku.edu/~trutat1/pics/Marius.jpg"
+          alt="Traian Marius Truta"
+          class="w-full h-56 object-cover rounded-lg"
+        >
+        <div>
+          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
+          <p class="text-gray-600">
+            Dr. Traian Marius Truta is a Professor of Computer Science and the Director of the School of Computing and Analytics at Northern Kentucky University (NKU). His research interests include data privacy, databases, and social networks. He holds a PhD in Computer Science from Wayne State University and teaches both undergraduate and graduate courses, especially those related to databases.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="bg-blue-700 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="flex justify-between items-center">
-                <div class="hidden lg:flex space-x-6 xl:space-x-8">
-                    <!-- ABOUT -->
-                    <div class="nav-item">
-                        <a href="#" class="py-4 px-2 text-sm font-medium transition-colors block">ABOUT</a>
-                        <div class="dropdown">
-                            <a href="#">Mission & Vision</a>
-                            <a href="#">History</a>
-                            <a href="#">Leadership</a>
-                            <a href="#">Board of Directors</a>
-                            <a href="#">Staff</a>
-                        </div>
-                    </div>
-                    
-                    <!-- GOVERNMENT AFFAIRS -->
-                    <div class="nav-item">
-                        <a href="#" class="py-4 px-2 text-sm font-medium transition-colors block">GOVERNMENT AFFAIRS</a>
-                        <div class="dropdown">
-                            <a href="#">Policy Priorities</a>
-                            <a href="#">Federal Budget</a>
-                            <a href="#">Immigration</a>
-                            <a href="#">Privacy & Security</a>
-                            <a href="#">Take Action</a>
-                        </div>
-                    </div>
-                    
-                    <!-- COMMITTEES -->
-                    <div class="nav-item">
-                        <a href="#" class="py-4 px-2 text-sm font-medium transition-colors block">COMMITTEES</a>
-                        <div class="dropdown">
-                            <a href="#">Computing Community Consortium</a>
-                            <a href="#">Committee on Widening Participation</a>
-                            <a href="#">Education Committee</a>
-                            <a href="#">Industry Committee</a>
-                            <a href="#">Snowbird Conference</a>
-                        </div>
-                    </div>
-                    
-                    <!-- PROGRAMS -->
-                    <div class="nav-item">
-                        <a href="#" class="py-4 px-2 text-sm font-medium transition-colors block">PROGRAMS</a>
-                        <div class="dropdown">
-                            <a href="#">NSF Level Up</a>
-                            <a href="#">Widening Participation</a>
-                            <a href="#">Best Practices Memo</a>
-                            <a href="#">Undergraduate Research</a>
-                            <a href="#">Graduate Fellowships</a>
-                        </div>
-                    </div>
-                    
-                    <!-- EVENTS -->
-                    <div class="nav-item">
-                        <a href="#" class="py-4 px-2 text-sm font-medium transition-colors block">EVENTS</a>
-                        <div class="dropdown">
-                            <a href="#">Upcoming Events</a>
-                            <a href="#">Snowbird Conference</a>
-                            <a href="#">Workshops</a>
-                            <a href="#">Webinars</a>
-                            <a href="#">Past Events</a>
-                        </div>
-                    </div>
-                    
-                    <!-- AWARDS -->
-                    <div class="nav-item">
-                        <a href="#" class="py-4 px-2 text-sm font-medium transition-colors block">AWARDS</a>
-                        <div class="dropdown">
-                            <a href="#">Outstanding Undergraduate Researcher</a>
-                            <a href="#">A. Nico Habermann Award</a>
-                            <a href="#">Distinguished Service Award</a>
-                            <a href="#">Nominations</a>
-                            <a href="#">Past Recipients</a>
-                        </div>
-                    </div>
-                    
-                    <!-- RESOURCES -->
-                    <div class="nav-item">
-                        <a href="#" class="py-4 px-2 text-sm font-medium transition-colors block">RESOURCES</a>
-                        <div class="dropdown">
-                            <a href="#">Best Practices</a>
-                            <a href="#">Reports & Whitepapers</a>
-                            <a href="#">Data & Statistics</a>
-                            <a href="#">Funding Opportunities</a>
-                            <a href="#">Career Resources</a>
-                        </div>
-                    </div>
-                    
-                    <!-- DATA -->
-                    <div class="nav-item">
-                        <a href="#" class="py-4 px-2 text-sm font-medium transition-colors block">DATA</a>
-                        <div class="dropdown">
-                            <a href="#">Taulbee Survey</a>
-                            <a href="#">Generation CS</a>
-                            <a href="#">Data Buddies</a>
-                            <a href="#">Enrollment Trends</a>
-                            <a href="#">Salary Data</a>
-                        </div>
-                    </div>
-                    
-                    <!-- STATEMENTS/POSITIONS (No dropdown) -->
-                    <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">STATEMENTS/POSITIONS</a>
-                    
-                    <!-- JOBS -->
-                    <div class="nav-item">
-                        <a href="#" class="py-4 px-2 text-sm font-medium transition-colors block">JOBS</a>
-                        <div class="dropdown">
-                            <a href="#">Academic Positions</a>
-                            <a href="#">Industry Positions</a>
-                            <a href="#">Post Job</a>
-                            <a href="#">Career Advice</a>
-                            <a href="#">Salary Information</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" class="lg:hidden py-4 px-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="mobile-menu lg:hidden pb-4">
-                <!-- ABOUT Mobile -->
-                <div>
-                    <button class="mobile-dropdown-btn w-full text-left py-2 px-4 text-sm font-medium hover:bg-blue-600 flex justify-between items-center" data-target="about-dropdown">
-                        ABOUT
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="about-dropdown" class="mobile-dropdown">
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Mission & Vision</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">History</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Leadership</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Board of Directors</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Staff</a>
-                    </div>
-                </div>
-                
-                <!-- GOVERNMENT AFFAIRS Mobile -->
-                <div>
-                    <button class="mobile-dropdown-btn w-full text-left py-2 px-4 text-sm font-medium hover:bg-blue-600 flex justify-between items-center" data-target="gov-dropdown">
-                        GOVERNMENT AFFAIRS
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="gov-dropdown" class="mobile-dropdown">
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Policy Priorities</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Federal Budget</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Immigration</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Privacy & Security</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Take Action</a>
-                    </div>
-                </div>
-                
-                <!-- COMMITTEES Mobile -->
-                <div>
-                    <button class="mobile-dropdown-btn w-full text-left py-2 px-4 text-sm font-medium hover:bg-blue-600 flex justify-between items-center" data-target="committees-dropdown">
-                        COMMITTEES
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="committees-dropdown" class="mobile-dropdown">
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Computing Community Consortium</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Committee on Widening Participation</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Education Committee</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Industry Committee</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Snowbird Conference</a>
-                    </div>
-                </div>
-                
-                <!-- PROGRAMS Mobile -->
-                <div>
-                    <button class="mobile-dropdown-btn w-full text-left py-2 px-4 text-sm font-medium hover:bg-blue-600 flex justify-between items-center" data-target="programs-dropdown">
-                        PROGRAMS
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="programs-dropdown" class="mobile-dropdown">
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">NSF Level Up</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Widening Participation</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Best Practices Memo</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Undergraduate Research</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Graduate Fellowships</a>
-                    </div>
-                </div>
-                
-                <!-- EVENTS Mobile -->
-                <div>
-                    <button class="mobile-dropdown-btn w-full text-left py-2 px-4 text-sm font-medium hover:bg-blue-600 flex justify-between items-center" data-target="events-dropdown">
-                        EVENTS
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="events-dropdown" class="mobile-dropdown">
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Upcoming Events</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Snowbird Conference</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Workshops</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Webinars</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Past Events</a>
-                    </div>
-                </div>
-                
-                <!-- AWARDS Mobile -->
-                <div>
-                    <button class="mobile-dropdown-btn w-full text-left py-2 px-4 text-sm font-medium hover:bg-blue-600 flex justify-between items-center" data-target="awards-dropdown">
-                        AWARDS
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="awards-dropdown" class="mobile-dropdown">
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Outstanding Undergraduate Researcher</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">A. Nico Habermann Award</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Distinguished Service Award</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Nominations</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Past Recipients</a>
-                    </div>
-                </div>
-                
-                <!-- RESOURCES Mobile -->
-                <div>
-                    <button class="mobile-dropdown-btn w-full text-left py-2 px-4 text-sm font-medium hover:bg-blue-600 flex justify-between items-center" data-target="resources-dropdown">
-                        RESOURCES
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="resources-dropdown" class="mobile-dropdown">
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Best Practices</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Reports & Whitepapers</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Data & Statistics</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Funding Opportunities</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Career Resources</a>
-                    </div>
-                </div>
-                
-                <!-- DATA Mobile -->
-                <div>
-                    <button class="mobile-dropdown-btn w-full text-left py-2 px-4 text-sm font-medium hover:bg-blue-600 flex justify-between items-center" data-target="data-dropdown">
-                        DATA
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="data-dropdown" class="mobile-dropdown">
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Taulbee Survey</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Generation CS</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Data Buddies</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Enrollment Trends</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Salary Data</a>
-                    </div>
-                </div>
-                
-                <!-- STATEMENTS/POSITIONS Mobile (No dropdown) -->
-                <a href="#" class="block py-2 px-4 text-sm font-medium hover:bg-blue-600">STATEMENTS/POSITIONS</a>
-                
-                <!-- JOBS Mobile -->
-                <div>
-                    <button class="mobile-dropdown-btn w-full text-left py-2 px-4 text-sm font-medium hover:bg-blue-600 flex justify-between items-center" data-target="jobs-dropdown">
-                        JOBS
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="jobs-dropdown" class="mobile-dropdown">
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Academic Positions</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Industry Positions</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Post Job</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Career Advice</a>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-blue-600">Salary Information</a>
-                    </div>
-                </div>
-            </div>
+    <!-- Tracy Camp -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-4">Tracy Camp (Co-PI, Computing Research Association)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img
+          src="https://s8968.pcdn.co/cra-wp/wp-content/uploads/sites/8/2021/12/TracyCamp.jpg"
+          alt="Tracy Camp"
+          class="w-full h-56 object-cover rounded-lg"
+        >
+        <div>
+          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
+          <p class="text-gray-600">
+            Dr. Tracy Camp is a highly respected computer scientist and leader in the field of computing research. She currently serves as the Executive Director of the Computing Research Association (CRA), where she works to advance the computing research community and promote diversity in the field. Prior to this role, she was a professor and department head at the Colorado School of Mines, where she contributed significantly to research and education in computer science. Dr. Camp is recognized for her work in wireless networking, her commitment to increasing the representation of women and underrepresented groups in computing, and her leadership in national and international computing organizations.
+          </p>
         </div>
-    </nav>
+      </div>
+    </div>
 
-    <!-- Main Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1 order-2 lg:order-1">
-                <h2 class="text-2xl font-bold text-blue-700 mb-6">NSF LEVEL UP</h2>
-                <nav class="space-y-2">
-                    <a href="#" class="sidebar-item block py-2 px-4 text-gray-700 rounded transition-colors">Overview</a>
-                    <a href="#" class="sidebar-item block py-2 px-4 text-gray-700 rounded transition-colors">Working Groups</a>
-                    <a href="#" class="sidebar-item block py-2 px-4 text-gray-700 rounded transition-colors">Workshop Information</a>
-                    <a href="#" class="sidebar-item block py-2 px-4 text-gray-700 rounded transition-colors">Workshop Agenda & Resources</a>
-                    <a href="#" class="sidebar-item block py-2 px-4 text-gray-700 rounded transition-colors">Involved Leaders</a>
-                </nav>
-            </div>
+    <!-- Hongchi Shi -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-4">Hongchi Shi (Co-PI, Texas State University)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img
+          src="https://userweb.cs.txstate.edu/~hs15/images/hhh.jpg"
+          alt="Hongchi Shi"
+          class="w-full h-56 object-cover rounded-lg"
+        >
+        <div>
+          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
+          <p class="text-gray-600">
+            Dr. Hongchi Shi is a Professor and Chair of the Department of Computer Science at Texas State University. His research interests include parallel and distributed computing, wireless sensor networks, image processing, and neural networks. Dr. Shi has contributed to numerous scholarly works and has been recognized with several awards, such as Senior Member of IEEE and Alpha Chi Favorite Professor. He is actively involved in research grants, including projects on trustworthy AI and inclusive computing.
+          </p>
+        </div>
+      </div>
+    </div>
 
-            <!-- Main Content -->
-            <div class="lg:col-span-3 order-1 lg:order-2">
-                <!-- NSF LEVEL UP AI Banner -->
-              <div class="mb-8 bg-blue-200 border border-blue-300 rounded-lg shadow-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-end gap-4">
-  <div class="flex-1 text-center sm:text-left">
-    <p class="font-medium text-blue-800 mb-2">
-      Check out the next phase of the NSF LEVEL UP initiative:
-    </p>
-    <h2 class="text-2xl font-bold text-blue-900">NSF LEVEL UP AI</h2>
+    <!-- Shaoen Wu -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-4">Shaoen Wu (Co-PI, Kennesaw State University)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img
+          src="https://www.kennesaw.edu/ccse/academics/information-technology/images/shaoen-wu.jpg"
+          alt="Shaoen Wu"
+          class="w-full h-56 object-cover rounded-lg"
+        >
+        <div>
+          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
+          <p class="text-gray-600">
+            Dr. Shaoen Wu is the Chair of the Department of Information Technology, Interim Director of the Center for Applied Computing, and Professor of Information Technology at Kennesaw State University. His research focuses on cybersecurity, the Internet of Things, wireless sensing and networking, and smart health. Dr. Wu holds a Ph.D. in Computer Science and Software Engineering from Auburn University and has an extensive academic and research background.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Junxiu Zhou -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-4">Junxiu Zhou (Co-PI, Northern Kentucky University)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img
+          src="https://www.nku.edu/content/www/academics/informatics/schools/sca/people/_jcr_content/par/columncontrol_394374978/column-2/slideshow/image_1581737848.img.320.medium.jpg/1190676554.jpg"
+          alt="Junxiu Zhou"
+          class="w-full h-56 object-cover rounded-lg"
+        >
+        <div>
+          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
+          <p class="text-gray-600">
+            Dr. Junxiu Zhou is an Assistant Professor of Computer Science at Northern Kentucky University. Her research focuses on machine learning, deep learning, computer vision, image processing, and network resource optimization. She teaches and conducts research in artificial intelligence and has led projects in areas such as sentiment analysis, fruit recognition, and facial emotion recognition.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mary Lou Maher -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-4">Mary Lou Maher (Senior Investigator, Computing Research Association)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img
+          src="https://s8968.pcdn.co/wp-content/uploads/2024/01/Maher-LO-300x450-1-e1705597163603.jpeg"
+          alt="Mary Lou Maher"
+          class="w-full h-56 object-cover rounded-lg"
+        >
+        <div>
+          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
+          <p class="text-gray-600">
+            Dr. Mary Lou Maher is the Director of Research Community Initiatives at the Computing Research Association (CRA), where she leads the Computing Community Consortium (CCC). In this role, she advances high-impact computing research and addresses global challenges. Her interests include human-centered AI, ethical human-AI interaction, and inclusive computing education.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chloe Yixin Xie -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-4">Chloe Yixin Xie (Senior Investigator, Kennesaw State University)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img
+          src="https://facultyweb.kennesaw.edu/yxie11/images/headshot_yixin.jpg"
+          alt="Chloe Yixin Xie"
+          class="w-full h-56 object-cover rounded-lg"
+        >
+        <div>
+          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
+          <p class="text-gray-600">
+            Dr. Chloe Yixin Xie is an Assistant Professor of Information Technology at Kennesaw State University and Director of the BioTech X-Lab. Her work spans AI in biotechnology, bioinformatics, computational biology, and biomedical engineering. She holds a Ph.D. in Computational Science and has been recognized for her research excellence.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <button
-    class="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded transition-colors whitespace-nowrap"
-  >
-    Learn more
-  </button>
 </div>
 
-
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div class="lg:col-span-2">
-                        <h3 class="text-lg font-bold text-blue-700 mb-4">NSF LEVEL UP Goal</h3>
-                        <p class="text-gray-700 mb-4">
-                            The goal of NSF LEVEL UP is to build consensus around a unified vision of inclusive undergraduate computing education. Through collaboration with a respected advisory board of computing educators and professionals from across the country, the NSF LEVEL UP project will develop an evidence-based report of best practices that computing departments should implement nationwide. CRA will work with our diverse computing community members to chart a pathway that undergraduate computing programs can implement to offer inclusive computing courses and opportunities where all students feel welcome and thrive.
-                        </p>
-
-                        <h4 class="font-bold text-blue-700 mb-2">A Collaborative Effort</h4>
-                        <p class="text-gray-700 mb-4">
-                            CRA will lead the shared effort that involves the <a href="#" class="text-blue-600 underline">Association for Computing Machinery</a>, <a href="#" class="text-blue-600 underline">IEEE Computer Society</a>, several National Science Foundation (NSF) Broadening Participation in Computing (BPC) Alliances (including <a href="#" class="text-blue-600 underline">AccessComputing</a>, <a href="#" class="text-blue-600 underline">Computing Alliance of Hispanic-Serving Institutions</a>, <a href="#" class="text-blue-600 underline">CRA-Widening Participation</a>, <a href="#" class="text-blue-600 underline">Expanding Computing Education Pathways</a>, <a href="#" class="text-blue-600 underline">Institute for African-American Mentoring in Computing Sciences</a>, <a href="#" class="text-blue-600 underline">Diversifying LEAdership in the Professoriate Alliance</a>, <a href="#" class="text-blue-600 underline">National Center for Women and Information Technology</a>, and <a href="#" class="text-blue-600 underline">STARS Computing Corps</a>), as well as the <a href="#" class="text-blue-600 underline">Center for Inclusive Computing</a> at Northeastern University.
-                        </p>
-
-                        <h4 class="font-bold text-blue-700 mb-2">Let's LEVEL UP</h4>
-                        <p class="text-gray-700">
-                            Computing education continues to face challenges around inclusion, diversity, equity, and accessible learning. Change is possible with a coordinated effort among computing department leaders and faculty. CRA encourages all universities and colleges to "LEVEL UP" and implement best practices that broaden participation in computing. NSF LEVEL UP will build consensus on which BPC evidence-based best practices are vital and should be implemented on a large scale.
-                        </p>
-                    </div>
-
-                    <div class="lg:col-span-1">
-                        <!-- NSF LEVEL UP Logo -->
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <div class="flex justify-center">
-                                <img src="https://s8968.pcdn.co/wp-content/uploads/2024/03/NSF-Level-Up-Logo-300x197.png" alt="NSF LEVEL UP Logo" class="max-w-full h-auto rounded-lg">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Footer text -->
-                <div class="mt-8 p-4 bg-gray-50 rounded-lg">
-                    <p class="text-sm text-gray-600">
-                        NSF LEVEL UP is a collaborative effort involving ACM, CRA, IEEE-CS, and the BPC Alliances (AccessComputing, CAHSI, CIC, CRA-WP, ECEP, IAAMCS, LEAP, NCWIT, and STARS). This material is based upon work supported by the National Science Foundation under Grant No. CNS-2246079. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Rainbow footer stripe -->
-    <div class="h-2 rainbow-gradient"></div>
-
-   <footer class="bg-white py-8">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Logos -->
-    <div class="footer-logos 
-                grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 
-                gap-4 sm:gap-6 justify-items-center">
+      <!-- Placeholder for other tabs -->
+      <div id="roundtable" class="tab-content hidden"><h2 class="text-2xl font-bold mb-4">RoundTable Discussion</h2><p>Content coming soon.</p></div>
+      <div id="workshop-info" class="tab-content hidden"><h2 class="text-2xl font-bold mb-4">Workshop Information</h2><p>Content coming soon.</p></div>
+      <div id="agenda-resources" class="tab-content hidden"><h2 class="text-2xl font-bold mb-4">Workshop Agenda & Resources</h2><p>Content coming soon.</p></div>
+      <div id="registration" class="tab-content hidden"><h2 class="text-2xl font-bold mb-4">Workshop Registration</h2><p>Content coming soon.</p></div>
       
-      <!-- CRA -->
-      <div class="text-center">
-        <img
-          src="https://s8968.pcdn.co/wp-content/uploads/2015/07/cra_logo_vt-110.png"
-          alt="CRA Logo"
-          class="h-16 sm:h-20 md:h-28 lg:h-32 w-auto mx-auto mb-2"
-        >
-        <p class="text-sm font-bold text-gray-700">CRA</p>
+      <!-- Sponsors and Partners Tab -->
+      <div id="sponsors" class="tab-content hidden">
+        <h2 class="text-2xl font-bold text-blue-700 mb-6">Sponsors and Partners</h2>
+        <div class="space-y-8">
+          
+          <!-- Computing Research Association -->
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-4">Computing Research Association (CRA)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <img
+                src="https://news.cs.washington.edu/wp-content/uploads/2018/02/cra_logo_hz.png"
+                alt="Computing Research Association Logo"
+                class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
+              >
+              <div>
+                <p class="text-gray-600 mb-4">
+                  Computing Research Association (CRA) is a 501(c)3 non-profit professional organization headquartered in Washington, District of Columbia. The mission of CRA is to catalyze computing research by joining with industry, government, and academia.
+                </p>
+                <p class="text-gray-600 mb-4">
+                  CRA executes this mission by leading the computing research community; informing policymakers and the public; and championing a diverse, welcoming, equitable, and socially responsible computing research community.
+                </p>
+                <p class="text-gray-600">
+                  CRA counts among its members more than 250 North American organizations active in computing research: academic departments of computing; laboratories and centers in industry, government, and academia; and affiliated professional societies (AAAI, ACM, CS-CAN, IEEE Computer Society, SIAM, and USENIX). CRA works with these organizations to represent the computing research community and to effect change that benefits both computing research and society at large.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Northern Kentucky University -->
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-4">Northern Kentucky University (NKU)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <img
+                src="https://nku.bncollege.com/medias/NKU-8034.png?context=bWFzdGVyfGxvZ29zfDIyNjI5fGltYWdlL3BuZ3xhRFF3TDJobE1DOHhNRFUzTlRjME5qRTNNRGt4TUM5T1MxVmZPREF6TkM1d2JtY3xhZjhkYTg5ODM2NjhkN2M1ZGMzMmRjMzViZTQ0OTdkYWEzODllNTY0OTA5MmJjYzZkY2JjYmY3Mjk3NDA0ZDA2"
+                alt="Northern Kentucky University Logo"
+                class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
+              >
+              <div>
+                <p class="text-gray-600 mb-4">
+                  Northern Kentucky University (NKU) is a public institution located in Highland Heights, Kentucky, classified as Doctoral / Professional in the Carnegie Classification. Established in 1968, NKU is renowned for its commitment to providing high-quality education and fostering a supportive and inclusive community.
+                </p>
+                <p class="text-gray-600 mb-4">
+                  With a total undergraduate enrollment of nearly 16,000 students as of Fall 2024, NKU maintains a suburban setting that offers a conducive environment for learning and personal growth.
+                </p>
+                <p class="text-gray-600">
+                  NKU is home to the School of Computing and Analytics (SCA), which offers multiple bachelor's and master's programs, serving over 1,300 students. The school comprises 36 full-time faculty members, with 26 holding tenured or tenure-track positions. The School recently introduced a Minor in Artificial Intelligence, further expanding its academic offerings and providing students with cutting-edge knowledge and skills in this rapidly evolving field.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Texas State University -->
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-4">Texas State University (TXST)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/Texas_State_University_seal.svg/1200px-Texas_State_University_seal.svg.png"
+                alt="Texas State University Logo"
+                class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
+              >
+              <div>
+                <p class="text-gray-600 mb-4">
+                  Texas State University (TXST) is a public, student-centered research institution located in San Marcos, Texas. TXST is classified as a R2 university in the Carnegie Classification. Established in 1898, TXST is guided by the unwavering belief in the power of education to transform communities, power economies, and reimagine the world.
+                </p>
+                <p class="text-gray-600 mb-4">
+                  TXST currently enrolls 40,678 students from every walk of life, from across Texas, the nation, and the world. The Department of Computer Science at TXST offers a PhD, two master's, and two bachelor's degree programs, serving 2,235 students in Fall 2024 with 972 of them from underrepresented groups.
+                </p>
+                <p class="text-gray-600">
+                  In addition, the Department enrolls 187 minors. The Department currently comprises 44 faculty members, including 25 tenured/tenure-track faculty. The Department has proposed a Master of Science in Artificial Intelligence degree program.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kennesaw State University -->
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-4">Kennesaw State University (KSU)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <img
+                src="https://www.kennesaw.edu/news/stories/images/2018/FPR_new%20Logo%20rotator.jpg"
+                alt="Kennesaw State University Logo"
+                class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
+              >
+              <div>
+                <p class="text-gray-600 mb-4">
+                  Kennesaw State University (KSU) is a public, student-centered R2 research institution in Atlanta, GA. KSU currently enrolls 48,000 students, the second largest university in Georgia.
+                </p>
+                <p class="text-gray-600 mb-4">
+                  The College of Computing of Software Engineering (CCSE) at Kennesaw State University is one the largest computing colleges in the nation with an enrollment of 6,000 students in two PhD programs (CS and DS), six MS programs (AI/CS/IT/Cybersecurity/DS/SW) and five BS programs (CS/IT/SW/Game/DS).
+                </p>
+                <p class="text-gray-600">
+                  The CCSE opened its MSAI in the Fall of 2024 and is launching a BSAI in the Fall of 2025. About 1/3 of the KSU enrollments are first-generation college students. The CCSE has about 100 faculty and 20+ staff.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <!-- CCC -->
-      <div class="text-center">
-        <img
-          src="https://s8968.pcdn.co/wp-content/uploads/2015/07/ccc_vt-ag-110.png"
-          alt="CCC Logo"
-          class="h-16 sm:h-20 md:h-28 lg:h-32 w-auto mx-auto mb-2"
-        >
-        <p class="text-sm font-bold text-gray-700">CCC</p>
-      </div>
-
-      <!-- CRA-WP -->
-      <div class="text-center">
-        <img
-          src="https://s8968.pcdn.co/wp-content/uploads/2019/09/CRA_WP-Logo_vrt110-1.png"
-          alt="CRA-WP Logo"
-          class="h-16 sm:h-20 md:h-28 lg:h-32 w-auto mx-auto mb-2"
-        >
-        <p class="text-sm font-bold text-gray-700">CRA-WP</p>
-      </div>
-
-      <!-- CRA-E -->
-      <div class="text-center">
-        <img
-          src="https://s8968.pcdn.co/wp-content/uploads/2015/07/crae_vt-110.png"
-          alt="CRA-E Logo"
-          class="h-16 sm:h-20 md:h-28 lg:h-32 w-auto mx-auto mb-2"
-        >
-        <p class="text-sm font-bold text-gray-700">CRA-E</p>
-      </div>
-
-      <!-- CERP -->
-      <div class="text-center">
-        <img
-          src="https://s8968.pcdn.co/wp-content/uploads/2015/07/cerp_vt-110.png"
-          alt="CERP Logo"
-          class="h-16 sm:h-20 md:h-28 lg:h-32 w-auto mx-auto mb-2"
-        >
-        <p class="text-sm font-bold text-gray-700">CERP</p>
-      </div>
-
-      <!-- CRA-I -->
-      <div class="text-center">
-        <img
-          src="https://s8968.pcdn.co/wp-content/uploads/2022/05/cra-industry.png"
-          alt="CRA-I Logo"
-          class="h-16 sm:h-20 md:h-28 lg:h-32 w-auto mx-auto mb-2"
-        >
-        <p class="text-sm font-bold text-gray-700">CRA-I</p>
-      </div>
-
-    </div>
-
-    <!-- Footer Links + Copyright -->
-    <div class="mt-8 border-t border-gray-200 pt-6">
-      <div class="flex flex-wrap justify-center items-center text-sm">
-        <a href="#" class="text-red-600 hover:text-red-800">CRA Home</a>
-        <span class="mx-2 text-red-600">|</span>
-        <a href="#" class="text-red-600 hover:text-red-800">Contact Us</a>
-        <span class="mx-2 text-red-600">|</span>
-        <a href="#" class="text-red-600 hover:text-red-800">Accessibility Statement</a>
-        <span class="mx-2 text-red-600">|</span>
-        <a href="#" class="text-red-600 hover:text-red-800">Unsubscribe/Removal of Information</a>
-        <span class="mx-2 text-red-600">|</span>
-        <a href="#" class="text-red-600 hover:text-red-800">Terms of Use</a>
-        <!-- copyright on the same line, gray -->
-        <span class="ml-4 text-gray-600">© Copyright 2025 – CRA</span>
-      </div>
-    </div>
+    </section>
   </div>
-</footer>
 
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <!-- Footer Links + Copyright -->
+      <div class="mt-8 border-t border-gray-200 pt-6">
+        <div class="flex flex-wrap justify-center items-center text-sm">
+          <a href="#" class="text-red-600 hover:text-red-800">CRA Home</a>
+          <span class="mx-2 text-red-600">|</span>
+          <a href="#" class="text-red-600 hover:text-red-800">Contact Us</a>
+          <span class="mx-2 text-red-600">|</span>
+          <a href="#" class="text-red-600 hover:text-red-800">Accessibility Statement</a>
+          <span class="mx-2 text-red-600">|</span>
+          <a href="#" class="text-red-600 hover:text-red-800">Unsubscribe/Removal of Information</a>
+          <span class="mx-2 text-red-600">|</span>
+          <a href="#" class="text-red-600 hover:text-red-800">Terms of Use</a>
+          <!-- copyright on the same line, gray -->
+          <span class="ml-4 text-gray-600">© Copyright 2025 – CRA</span>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-
-    <script>
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Mobile dropdown functionality
-        const mobileDropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
-        
-        mobileDropdownBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const targetId = this.getAttribute('data-target');
-                const dropdown = document.getElementById(targetId);
-                const arrow = this.querySelector('svg');
-                
-                // Toggle dropdown
-                dropdown.classList.toggle('active');
-                
-                // Rotate arrow
-                if (dropdown.classList.contains('active')) {
-                    arrow.style.transform = 'rotate(180deg)';
-                } else {
-                    arrow.style.transform = 'rotate(0deg)';
-                }
-            });
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('nav') && mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Add active state to sidebar navigation
-        const sidebarItems = document.querySelectorAll('.sidebar-item');
-        sidebarItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                sidebarItems.forEach(i => i.classList.remove('bg-blue-100', 'text-blue-700'));
-                this.classList.add('bg-blue-100', 'text-blue-700');
-            });
-        });
-
-        // Set first sidebar item as active by default
-        if (sidebarItems.length > 0) {
-            sidebarItems[0].classList.add('bg-blue-100', 'text-blue-700');
-        }
-
-        // Learn more button functionality
-        const learnMoreBtn = document.querySelector('button');
-        if (learnMoreBtn && learnMoreBtn.textContent.includes('Learn more')) {
-            learnMoreBtn.addEventListener('click', function() {
-                alert('Learn more about NSF LEVEL UP AI initiative!');
-            });
-        }
-    </script>
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+    // Tab switching
+    document.querySelectorAll('.sidebar-item').forEach(item => item.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('bg-blue-100','text-blue-700'));
+      item.classList.add('bg-blue-100','text-blue-700');
+      document.querySelectorAll('.tab-content').forEach(tab => tab.id === item.getAttribute('data-target') ? tab.classList.remove('hidden') : tab.classList.add('hidden'));
+    }));
+  </script>
 </body>
 </html>
