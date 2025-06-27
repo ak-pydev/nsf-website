@@ -11,7 +11,7 @@
     .sidebar-item:hover { background-color: #e5e7eb; }
   </style>
 </head>
-<body class="min-h-screen bg-gray-100">
+<body class="min-h-screen bg-gray-100 flex flex-col">
   <!-- Rainbow header stripe -->
   <div class="h-2 rainbow-gradient"></div>
 
@@ -70,54 +70,55 @@
   </nav>
 
   <!-- Main -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
-    <!-- Sidebar -->
-    <aside class="lg:col-span-1">
-      <nav class="space-y-2">
-        <a href="#overview" data-target="overview" class="sidebar-item block py-2 px-4 rounded bg-blue-100 text-blue-700">Overview</a>
-        <a href="#working-group" data-target="working-group" class="sidebar-item block py-2 px-4 rounded">Working Group</a>
-        <a href="#roundtable" data-target="roundtable" class="sidebar-item block py-2 px-4 rounded">RoundTable Discussion</a>
-        <a href="#workshop-info" data-target="workshop-info" class="sidebar-item block py-2 px-4 rounded">Workshop Information</a>
-        <a href="#agenda-resources" data-target="agenda-resources" class="sidebar-item block py-2 px-4 rounded">Workshop Agenda & Resources</a>
-        <a href="#registration" data-target="registration" class="sidebar-item block py-2 px-4 rounded">Workshop Registration</a>
-        <a href="#sponsors" data-target="sponsors" class="sidebar-item block py-2 px-4 rounded">Sponsors and Partners</a>
-      </nav>
-    </aside>
+  <div class="flex-1">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <!-- Sidebar -->
+      <aside class="lg:col-span-1">
+        <nav class="space-y-2">
+          <a href="#overview" data-target="overview" class="sidebar-item block py-2 px-4 rounded bg-blue-100 text-blue-700">Overview</a>
+          <a href="#working-group" data-target="working-group" class="sidebar-item block py-2 px-4 rounded">Working Group</a>
+          <a href="#roundtable" data-target="roundtable" class="sidebar-item block py-2 px-4 rounded">RoundTable Discussion</a>
+          <a href="#workshop-info" data-target="workshop-info" class="sidebar-item block py-2 px-4 rounded">Workshop Information</a>
+          <a href="#agenda-resources" data-target="agenda-resources" class="sidebar-item block py-2 px-4 rounded">Workshop Agenda & Resources</a>
+          <a href="#registration" data-target="registration" class="sidebar-item block py-2 px-4 rounded">Workshop Registration</a>
+          <a href="#sponsors" data-target="sponsors" class="sidebar-item block py-2 px-4 rounded">Sponsors and Partners</a>
+        </nav>
+      </aside>
 
-    <!-- Content Area -->
-    <section class="lg:col-span-3" id="tab-contents">
+      <!-- Content Area -->
+      <section class="lg:col-span-3" id="tab-contents">
 
-      <!-- Overview Tab -->
-      <div id="overview" class="tab-content">
-        <h2 class="text-2xl font-bold text-blue-700 mb-4">Overview</h2>
-        <p class="mb-4">Capacity and Community for Research-Emerging Institutions with Large Computing Programs (Conference) combines virtual and in-person engagement, the project fosters collaboration, enhances accessibility, and supports faculty in expanding AI education at Research-Emerging Institutions with Large Computing Programs.</p>
-        <p class="mb-2"><strong>Goal:</strong></p>
-        <p class="mb-4">This Research-Emerging Institutions with Large Computing Programs NAIRR Conference aims to expand the NAIRR Pilot community to include educators bringing inclusive AI-educational experiences to classrooms nationwide. This conference has four goals:</p>
-        <ul class="list-disc list-inside mb-6">
-          <li>Goal 1: Facilitate increased instructional capacity and a community of practice among faculty at research-emerging institutions with large computing programs who will implement new AI courses or modules into undergraduate and master's educational pathways.</li>
-          <li>Goal 2: Identify a shared understanding of best practices for inclusive AI education relevant to research-emerging institutions with large computing programs.</li>
-          <li>Goal 3: Improve confidence of instructors at research-emerging institutions with large computing programs in utilizing NAIRR Pilot resources that are listed on nairrpilot.org.</li>
-          <li>Goal 4: Develop plans for including AI content in courses at research-emerging institutions with large computing programs, with the use of NAIRR Pilot resources when computational resources are needed.</li>
-        </ul>
-        <h3 class="text-xl font-bold text-blue-700 mb-4">A Collaborative Effort:</h3>
-        <p class="mb-6">Northern Kentucky University in collaboration with the Computing Research Association, Texas State University, and Kennesaw State University will engage faculty at Research-Emerging Institutions with Large Computing Programs in a series of virtual roundtable discussions and an in-person workshop to build a community of practice focused on increasing Artificial Intelligence education capacity and utilizing shared resources in the National AI Research Resource (NAIRR) Pilot. As part of a broader national effort spanning different types of institutions of higher education, this initiative seeks to expand the NAIRR Pilot community by equipping educators with the tools and knowledge needed to bring AI learning experiences into classrooms nationwide.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div>
-            <img src="https://cdaonline.org/wp-content/uploads/2023/11/onlinemeetingreduced-e1713834114424.jpg" alt="Online Roundtables" class="w-full rounded-lg shadow">
-            <p class="mt-2 text-center text-sm font-medium">Online Roundtables</p>
-          </div>
-          <div>
-            <img src="https://www.glowbl.com/blog/wp-content/uploads/2024/04/4-800x671.png" alt="Workshop" class="w-full rounded-lg shadow">
-            <p class="mt-2 text-center text-sm font-medium">Workshop</p>
-          </div>
-          <div>
-            <img src="https://www.innovationnewsnetwork.com/wp-content/uploads/2024/02/shutterstockPhonlamai-Photo_1058815598.jpg" alt="AI Education" class="w-full rounded-lg shadow">
-            <p class="mt-2 text-center text-sm font-medium">AI Education</p>
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content">
+          <h2 class="text-2xl font-bold text-blue-700 mb-4">Overview</h2>
+          <p class="mb-4">Capacity and Community for Research-Emerging Institutions with Large Computing Programs (Conference) combines virtual and in-person engagement, the project fosters collaboration, enhances accessibility, and supports faculty in expanding AI education at Research-Emerging Institutions with Large Computing Programs.</p>
+          <p class="mb-2"><strong>Goal:</strong></p>
+          <p class="mb-4">This Research-Emerging Institutions with Large Computing Programs NAIRR Conference aims to expand the NAIRR Pilot community to include educators bringing inclusive AI-educational experiences to classrooms nationwide. This conference has four goals:</p>
+          <ul class="list-disc list-inside mb-6">
+            <li>Goal 1: Facilitate increased instructional capacity and a community of practice among faculty at research-emerging institutions with large computing programs who will implement new AI courses or modules into undergraduate and master's educational pathways.</li>
+            <li>Goal 2: Identify a shared understanding of best practices for inclusive AI education relevant to research-emerging institutions with large computing programs.</li>
+            <li>Goal 3: Improve confidence of instructors at research-emerging institutions with large computing programs in utilizing NAIRR Pilot resources that are listed on nairrpilot.org.</li>
+            <li>Goal 4: Develop plans for including AI content in courses at research-emerging institutions with large computing programs, with the use of NAIRR Pilot resources when computational resources are needed.</li>
+          </ul>
+          <h3 class="text-xl font-bold text-blue-700 mb-4">A Collaborative Effort:</h3>
+          <p class="mb-6">Northern Kentucky University in collaboration with the Computing Research Association, Texas State University, and Kennesaw State University will engage faculty at Research-Emerging Institutions with Large Computing Programs in a series of virtual roundtable discussions and an in-person workshop to build a community of practice focused on increasing Artificial Intelligence education capacity and utilizing shared resources in the National AI Research Resource (NAIRR) Pilot. As part of a broader national effort spanning different types of institutions of higher education, this initiative seeks to expand the NAIRR Pilot community by equipping educators with the tools and knowledge needed to bring AI learning experiences into classrooms nationwide.</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <img src="https://cdaonline.org/wp-content/uploads/2023/11/onlinemeetingreduced-e1713834114424.jpg" alt="Online Roundtables" class="w-full rounded-lg shadow">
+              <p class="mt-2 text-center text-sm font-medium">Online Roundtables</p>
+            </div>
+            <div>
+              <img src="https://www.glowbl.com/blog/wp-content/uploads/2024/04/4-800x671.png" alt="Workshop" class="w-full rounded-lg shadow">
+              <p class="mt-2 text-center text-sm font-medium">Workshop</p>
+            </div>
+            <div>
+              <img src="https://www.innovationnewsnetwork.com/wp-content/uploads/2024/02/shutterstockPhonlamai-Photo_1058815598.jpg" alt="AI Education" class="w-full rounded-lg shadow">
+              <p class="mt-2 text-center text-sm font-medium">AI Education</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Working Group Tab -->
+        <!-- Working Group Tab -->
 <div id="working-group" class="tab-content hidden">
   <h2 class="text-2xl font-bold text-blue-700 mb-6">Working Group</h2>
   <div class="space-y-6">
@@ -249,133 +250,424 @@
   </div>
 </div>
 
-      <!-- Placeholder for other tabs -->
-      <div id="roundtable" class="tab-content hidden"><h2 class="text-2xl font-bold mb-4">RoundTable Discussion</h2><p>Content coming soon.</p></div>
-      <div id="workshop-info" class="tab-content hidden"><h2 class="text-2xl font-bold mb-4">Workshop Information</h2><p>Content coming soon.</p></div>
-      <div id="agenda-resources" class="tab-content hidden"><h2 class="text-2xl font-bold mb-4">Workshop Agenda & Resources</h2><p>Content coming soon.</p></div>
-      <div id="registration" class="tab-content hidden"><h2 class="text-2xl font-bold mb-4">Workshop Registration</h2><p>Content coming soon.</p></div>
+        <!-- Placeholder for other tabs -->
+        <!-- RoundTable Discussion Tab -->
+<div id="roundtable" class="tab-content hidden">
+  <h2 class="text-2xl font-bold text-blue-700 mb-6">RoundTable Discussion</h2>
+  
+  <div class="bg-white p-6 rounded-lg shadow mb-6">
+    <p class="text-gray-700 text-lg mb-6">
+      To reach our conference goal, the roundtable discusses barriers and challenges to increasing capacity of AI education and the integration of the NAIRR pilot in the large computing programs educational environment.
+    </p>
+    
+    <!-- Event Details -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div class="bg-blue-50 p-4 rounded-lg">
+        <h3 class="text-lg font-semibold text-blue-700 mb-3">Event Details</h3>
+        <div class="space-y-2">
+          <div class="flex items-center">
+            <span class="font-medium text-gray-700 w-20">Date:</span>
+            <span class="text-gray-600">Fall 2025</span>
+          </div>
+          <div class="flex items-center">
+            <span class="font-medium text-gray-700 w-20">Location:</span>
+            <span class="text-gray-600">Virtual</span>
+          </div>
+          <div class="flex items-center">
+            <span class="font-medium text-gray-700 w-20">Moderator:</span>
+            <span class="text-gray-600">TBD</span>
+          </div>
+          <div class="flex items-center">
+            <span class="font-medium text-gray-700 w-20">Participants:</span>
+            <span class="text-gray-600">TBD</span>
+          </div>
+        </div>
+      </div>
       
-      <!-- Sponsors and Partners Tab -->
-      <div id="sponsors" class="tab-content hidden">
-        <h2 class="text-2xl font-bold text-blue-700 mb-6">Sponsors and Partners</h2>
-        <div class="space-y-8">
-          
-          <!-- Computing Research Association -->
-          <div class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-xl font-semibold mb-4">Computing Research Association (CRA)</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <img
-                src="https://news.cs.washington.edu/wp-content/uploads/2018/02/cra_logo_hz.png"
-                alt="Computing Research Association Logo"
-                class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
-              >
-              <div>
-                <p class="text-gray-600 mb-4">
-                  Computing Research Association (CRA) is a 501(c)3 non-profit professional organization headquartered in Washington, District of Columbia. The mission of CRA is to catalyze computing research by joining with industry, government, and academia.
-                </p>
-                <p class="text-gray-600 mb-4">
-                  CRA executes this mission by leading the computing research community; informing policymakers and the public; and championing a diverse, welcoming, equitable, and socially responsible computing research community.
-                </p>
-                <p class="text-gray-600">
-                  CRA counts among its members more than 250 North American organizations active in computing research: academic departments of computing; laboratories and centers in industry, government, and academia; and affiliated professional societies (AAAI, ACM, CS-CAN, IEEE Computer Society, SIAM, and USENIX). CRA works with these organizations to represent the computing research community and to effect change that benefits both computing research and society at large.
-                </p>
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <h3 class="text-lg font-semibold text-gray-700 mb-3">Format</h3>
+        <p class="text-gray-600">
+          Interactive virtual roundtable discussion designed to foster collaboration and knowledge sharing among faculty at research-emerging institutions with large computing programs.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Discussion Topics -->
+    <div>
+      <h3 class="text-xl font-bold text-blue-700 mb-4">Discussion Topics</h3>
+      <div class="space-y-4">
+        <div class="border-l-4 border-blue-500 pl-4 py-2">
+          <h4 class="font-semibold text-gray-800">Topic 1: AI educational resources</h4>
+          <p class="text-gray-600 text-sm mt-1">Exploring available resources and identifying gaps in AI education materials</p>
+        </div>
+        
+        <div class="border-l-4 border-purple-500 pl-4 py-2">
+          <h4 class="font-semibold text-gray-800">Topic 2: Capacity to produce graduates with AI knowledge and skills</h4>
+          <p class="text-gray-600 text-sm mt-1">Discussing institutional capacity building and workforce development strategies</p>
+        </div>
+        
+        <div class="border-l-4 border-pink-500 pl-4 py-2">
+          <h4 class="font-semibold text-gray-800">Topic 3: Best practices for inclusive AI education</h4>
+          <p class="text-gray-600 text-sm mt-1">Sharing strategies for creating equitable and accessible AI learning experiences</p>
+        </div>
+        
+        <div class="border-l-4 border-red-500 pl-4 py-2">
+          <h4 class="font-semibold text-gray-800">Topic 4: Community of practice for effective use of NAIRR pilot</h4>
+          <p class="text-gray-600 text-sm mt-1">Building collaborative networks for NAIRR pilot resource utilization</p>
+        </div>
+        
+        <div class="border-l-4 border-orange-500 pl-4 py-2">
+          <h4 class="font-semibold text-gray-800">Topic 5: Implementation-ready plans for including NAIRR pilot resources in AI courses</h4>
+          <p class="text-gray-600 text-sm mt-1">Developing practical frameworks for integrating NAIRR resources into educational pathways</p>
+        </div>
+        
+        <div class="border-l-4 border-green-500 pl-4 py-2">
+          <h4 class="font-semibold text-gray-800">Topic 6: AI + X at research-emerging institutions with large computing programs</h4>
+          <p class="text-gray-600 text-sm mt-1">Exploring interdisciplinary AI applications and cross-domain collaborations</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <div class="mt-8 bg-blue-100 p-6 rounded-lg">
+      <h3 class="text-lg font-semibold text-blue-800 mb-2">Join the Discussion</h3>
+      <p class="text-blue-700 mb-4">
+        Faculty members from research-emerging institutions with large computing programs are invited to participate in this important dialogue about the future of AI education.
+      </p>
+      <p class="text-blue-600 text-sm">
+        Registration details and participant selection criteria will be announced soon.
+      </p>
+    </div>
+  </div>
+</div>
+        <!-- Workshop Information Tab -->
+<div id="workshop-info" class="tab-content hidden">
+  <h2 class="text-2xl font-bold text-blue-700 mb-6">Workshop Information</h2>
+  
+  <!-- Introduction -->
+  <div class="bg-white p-6 rounded-lg shadow mb-6">
+    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+      Insights gathered from the virtual roundtables will shape the agenda for this in-person workshop. Here, participants will further explore these challenges, opportunities, and available resources. The workshop will culminate in a publicly available report outlining best practices, example implementations, and recommendations for leveraging NAIRR Pilot resources in AI education.
+    </p>
+  </div>
+  
+  <!-- Event Details Card -->
+  <div class="bg-white p-6 rounded-lg shadow mb-6">
+    <h3 class="text-xl font-bold text-blue-700 mb-4 border-b border-gray-200 pb-2">Event Details</h3>
+    <div class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center">
+        <span class="font-semibold text-gray-700 w-32 mb-1 sm:mb-0">Date & Time:</span>
+        <span class="text-gray-600">Spring/Summer 2026</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center">
+        <span class="font-semibold text-gray-700 w-32 mb-1 sm:mb-0">Location:</span>
+        <span class="text-gray-600">To Be Determined</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center">
+        <span class="font-semibold text-gray-700 w-32 mb-1 sm:mb-0">Format:</span>
+        <span class="text-gray-600">In-Person Workshop</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center">
+        <span class="font-semibold text-gray-700 w-32 mb-1 sm:mb-0">Keynote Speakers:</span>
+        <span class="text-gray-600">To Be Announced</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Registration Information -->
+  <div class="bg-blue-50 border border-blue-200 p-6 rounded-lg">
+    <h3 class="text-lg font-semibold text-blue-800 mb-3">Registration & Updates</h3>
+    <p class="text-blue-700 mb-3">
+      Workshop details including specific location, keynote speakers, and registration information will be announced following the completion of the virtual roundtable discussions.
+    </p>
+    <p class="text-blue-600 text-sm">
+      <strong>Priority Registration:</strong> Participants from the virtual roundtables and faculty at research-emerging institutions with large computing programs will receive priority consideration.
+    </p>
+  </div>
+</div>
+        <div id="agenda-resources" class="tab-content hidden"><h2 class="text-2xl font-bold mb-4">Workshop Agenda & Resources</h2><p>Content coming soon.</p></div>
+        
+        <!-- Sponsors and Partners Tab -->
+        <div id="sponsors" class="tab-content hidden">
+          <h2 class="text-2xl font-bold text-blue-700 mb-6">Sponsors and Partners</h2>
+          <div class="space-y-8">
+            
+            <!-- Computing Research Association -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-semibold mb-4">Computing Research Association (CRA)</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img
+                  src="https://news.cs.washington.edu/wp-content/uploads/2018/02/cra_logo_hz.png"
+                  alt="Computing Research Association Logo"
+                  class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
+                >
+                <div>
+                  <p class="text-gray-600 mb-4">
+                    Computing Research Association (CRA) is a 501(c)3 non-profit professional organization headquartered in Washington, District of Columbia. The mission of CRA is to catalyze computing research by joining with industry, government, and academia.
+                  </p>
+                  <p class="text-gray-600 mb-4">
+                    CRA executes this mission by leading the computing research community; informing policymakers and the public; and championing a diverse, welcoming, equitable, and socially responsible computing research community.
+                  </p>
+                  <p class="text-gray-600">
+                    CRA counts among its members more than 250 North American organizations active in computing research: academic departments of computing; laboratories and centers in industry, government, and academia; and affiliated professional societies (AAAI, ACM, CS-CAN, IEEE Computer Society, SIAM, and USENIX). CRA works with these organizations to represent the computing research community and to effect change that benefits both computing research and society at large.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Northern Kentucky University -->
-          <div class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-xl font-semibold mb-4">Northern Kentucky University (NKU)</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <img
-                src="https://nku.bncollege.com/medias/NKU-8034.png?context=bWFzdGVyfGxvZ29zfDIyNjI5fGltYWdlL3BuZ3xhRFF3TDJobE1DOHhNRFUzTlRjME5qRTNNRGt4TUM5T1MxVmZPREF6TkM1d2JtY3xhZjhkYTg5ODM2NjhkN2M1ZGMzMmRjMzViZTQ0OTdkYWEzODllNTY0OTA5MmJjYzZkY2JjYmY3Mjk3NDA0ZDA2"
-                alt="Northern Kentucky University Logo"
-                class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
-              >
-              <div>
-                <p class="text-gray-600 mb-4">
-                  Northern Kentucky University (NKU) is a public institution located in Highland Heights, Kentucky, classified as Doctoral / Professional in the Carnegie Classification. Established in 1968, NKU is renowned for its commitment to providing high-quality education and fostering a supportive and inclusive community.
-                </p>
-                <p class="text-gray-600 mb-4">
-                  With a total undergraduate enrollment of nearly 16,000 students as of Fall 2024, NKU maintains a suburban setting that offers a conducive environment for learning and personal growth.
-                </p>
-                <p class="text-gray-600">
-                  NKU is home to the School of Computing and Analytics (SCA), which offers multiple bachelor's and master's programs, serving over 1,300 students. The school comprises 36 full-time faculty members, with 26 holding tenured or tenure-track positions. The School recently introduced a Minor in Artificial Intelligence, further expanding its academic offerings and providing students with cutting-edge knowledge and skills in this rapidly evolving field.
-                </p>
+            <!-- Northern Kentucky University -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-semibold mb-4">Northern Kentucky University (NKU)</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img
+                  src="https://nku.bncollege.com/medias/NKU-8034.png?context=bWFzdGVyfGxvZ29zfDIyNjI5fGltYWdlL3BuZ3xhRFF3TDJobE1DOHhNRFUzTlRjME5qRTNNRGt4TUM5T1MxVmZPREF6TkM1d2JtY3xhZjhkYTg5ODM2NjhkN2M1ZGMzMmRjMzViZTQ0OTdkYWEzODllNTY0OTA5MmJjYzZkY2JjYmY3Mjk3NDA0ZDA2"
+                  alt="Northern Kentucky University Logo"
+                  class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
+                >
+                <div>
+                  <p class="text-gray-600 mb-4">
+                    Northern Kentucky University (NKU) is a public institution located in Highland Heights, Kentucky, classified as Doctoral / Professional in the Carnegie Classification. Established in 1968, NKU is renowned for its commitment to providing high-quality education and fostering a supportive and inclusive community.
+                  </p>
+                  <p class="text-gray-600 mb-4">
+                    With a total undergraduate enrollment of nearly 16,000 students as of Fall 2024, NKU maintains a suburban setting that offers a conducive environment for learning and personal growth.
+                  </p>
+                  <p class="text-gray-600">
+                    NKU is home to the School of Computing and Analytics (SCA), which offers multiple bachelor's and master's programs, serving over 1,300 students. The school comprises 36 full-time faculty members, with 26 holding tenured or tenure-track positions. The School recently introduced a Minor in Artificial Intelligence, further expanding its academic offerings and providing students with cutting-edge knowledge and skills in this rapidly evolving field.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Texas State University -->
-          <div class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-xl font-semibold mb-4">Texas State University (TXST)</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/Texas_State_University_seal.svg/1200px-Texas_State_University_seal.svg.png"
-                alt="Texas State University Logo"
-                class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
-              >
-              <div>
-                <p class="text-gray-600 mb-4">
-                  Texas State University (TXST) is a public, student-centered research institution located in San Marcos, Texas. TXST is classified as a R2 university in the Carnegie Classification. Established in 1898, TXST is guided by the unwavering belief in the power of education to transform communities, power economies, and reimagine the world.
-                </p>
-                <p class="text-gray-600 mb-4">
-                  TXST currently enrolls 40,678 students from every walk of life, from across Texas, the nation, and the world. The Department of Computer Science at TXST offers a PhD, two master's, and two bachelor's degree programs, serving 2,235 students in Fall 2024 with 972 of them from underrepresented groups.
-                </p>
-                <p class="text-gray-600">
-                  In addition, the Department enrolls 187 minors. The Department currently comprises 44 faculty members, including 25 tenured/tenure-track faculty. The Department has proposed a Master of Science in Artificial Intelligence degree program.
-                </p>
+            <!-- Texas State University -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-semibold mb-4">Texas State University (TXST)</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img
+                  src="https://nscs.org/wp-content/uploads/2024/05/NEW_P_TXSTATE_RGB_Primary_3color_V-08.jpg"
+                  alt="Texas State University Logo"
+                  class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
+                >
+                <div>
+                  <p class="text-gray-600 mb-4">
+                    Texas State University (TXST) is a public, student-centered research institution located in San Marcos, Texas. TXST is classified as a R2 university in the Carnegie Classification. Established in 1898, TXST is guided by the unwavering belief in the power of education to transform communities, power economies, and reimagine the world.
+                  </p>
+                  <p class="text-gray-600 mb-4">
+                    TXST currently enrolls 40,678 students from every walk of life, from across Texas, the nation, and the world. The Department of Computer Science at TXST offers a PhD, two master's, and two bachelor's degree programs, serving 2,235 students in Fall 2024 with 972 of them from underrepresented groups.
+                  </p>
+                  <p class="text-gray-600">
+                    In addition, the Department enrolls 187 minors. The Department currently comprises 44 faculty members, including 25 tenured/tenure-track faculty. The Department has proposed a Master of Science in Artificial Intelligence degree program.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Kennesaw State University -->
-          <div class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-xl font-semibold mb-4">Kennesaw State University (KSU)</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <img
-                src="https://www.kennesaw.edu/news/stories/images/2018/FPR_new%20Logo%20rotator.jpg"
-                alt="Kennesaw State University Logo"
-                class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
-              >
-              <div>
-                <p class="text-gray-600 mb-4">
-                  Kennesaw State University (KSU) is a public, student-centered R2 research institution in Atlanta, GA. KSU currently enrolls 48,000 students, the second largest university in Georgia.
-                </p>
-                <p class="text-gray-600 mb-4">
-                  The College of Computing of Software Engineering (CCSE) at Kennesaw State University is one the largest computing colleges in the nation with an enrollment of 6,000 students in two PhD programs (CS and DS), six MS programs (AI/CS/IT/Cybersecurity/DS/SW) and five BS programs (CS/IT/SW/Game/DS).
-                </p>
-                <p class="text-gray-600">
-                  The CCSE opened its MSAI in the Fall of 2024 and is launching a BSAI in the Fall of 2025. About 1/3 of the KSU enrollments are first-generation college students. The CCSE has about 100 faculty and 20+ staff.
-                </p>
+            <!-- Kennesaw State University -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-semibold mb-4">Kennesaw State University (KSU)</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img
+                  src="https://www.ajc.com/resizer/v2/BVMLJOI6YMOI5V7AXOGVUKGS2A.png?auth=88b23112a99c38c32f441ddb6518fa185b3ff8a54de562d472be22656b0325f6&width=1460&height=800&smart=true"
+                  alt="Kennesaw State University Logo"
+                  class="w-full h-48 object-contain bg-gray-50 rounded-lg p-4"
+                >
+                <div>
+                  <p class="text-gray-600 mb-4">
+                    Kennesaw State University (KSU) is a public, student-centered R2 research institution in Atlanta, GA. KSU currently enrolls 48,000 students, the second largest university in Georgia.
+                  </p>
+                  <p class="text-gray-600 mb-4">
+                    The College of Computing of Software Engineering (CCSE) at Kennesaw State University is one the largest computing colleges in the nation with an enrollment of 6,000 students in two PhD programs (CS and DS), six MS programs (AI/CS/IT/Cybersecurity/DS/SW) and five BS programs (CS/IT/SW/Game/DS).
+                  </p>
+                  <p class="text-gray-600">
+                    The CCSE opened its MSAI in the Fall of 2024 and is launching a BSAI in the Fall of 2025. About 1/3 of the KSU enrollments are first-generation college students. The CCSE has about 100 faculty and 20+ staff.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
+          </div>
+        </div>
+
+        <!-- Workshop Registration Tab -->
+<div id="registration" class="tab-content hidden">
+  <h2 class="text-2xl font-bold text-blue-700 mb-6">Workshop Registration</h2>
+  
+  <!-- Introduction -->
+  <div class="bg-blue-50 border border-blue-200 p-6 rounded-lg mb-6">
+    <h3 class="text-lg font-semibold text-blue-800 mb-2">Registration Information</h3>
+    <p class="text-blue-700 mb-2">
+      Please complete the form below to register for the workshop. All fields marked with an asterisk (*) are required.
+    </p>
+    <p class="text-blue-600 text-sm">
+      <strong>Note:</strong> Priority will be given to faculty at research-emerging institutions with large computing programs.
+    </p>
+  </div>
+
+  <!-- Registration Form -->
+  <div class="bg-white p-8 rounded-lg shadow">
+    <form id="workshop-registration-form" class="space-y-6">
+      
+      <!-- Name Fields -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+            First Name <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            required
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Enter your first name"
+          >
+        </div>
+        <div>
+          <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+            Last Name <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            required
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Enter your last name"
+          >
         </div>
       </div>
 
-    </section>
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+          Applicant Email <span class="text-red-500">*</span>
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Enter your email address"
+        >
+      </div>
+
+      <!-- Personal Webpage -->
+      <div>
+        <label for="webpage" class="block text-sm font-medium text-gray-700 mb-2">
+          Link to Personal Webpage
+        </label>
+        <input
+          type="url"
+          id="webpage"
+          name="webpage"
+          class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="https://example.com/your-profile"
+        >
+        <p class="mt-1 text-sm text-gray-500">Optional: Include your professional or academic webpage</p>
+      </div>
+
+      <!-- Organization -->
+      <div>
+        <label for="organization" class="block text-sm font-medium text-gray-700 mb-2">
+          Organization of Applicant <span class="text-red-500">*</span>
+        </label>
+        <input
+          type="text"
+          id="organization"
+          name="organization"
+          required
+          class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Enter your university or organization name"
+        >
+      </div>
+
+      <!-- Title -->
+      <div>
+        <label for="title" class="block text-sm font-medium text-gray-700 mb-2">
+          Applicant Title <span class="text-red-500">*</span>
+        </label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          required
+          class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="e.g., Professor, Associate Professor, Assistant Professor"
+        >
+      </div>
+
+      <!-- Interest Statement -->
+      <div>
+        <label for="interest" class="block text-sm font-medium text-gray-700 mb-2">
+          Tell us why you are interested in attending this workshop <span class="text-red-500">*</span>
+        </label>
+        <textarea
+          id="interest"
+          name="interest"
+          required
+          rows="6"
+          class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Please describe your interest in AI education, your current involvement with computing programs, and how this workshop would benefit your work..."
+        ></textarea>
+        <p class="mt-1 text-sm text-gray-500">Please provide a detailed response (minimum 100 words recommended)</p>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="pt-4">
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors font-medium"
+        >
+          Submit Registration
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Additional Information -->
+  <div class="mt-6 bg-gray-50 p-6 rounded-lg">
+    <h3 class="text-lg font-semibold text-gray-800 mb-3">What Happens Next?</h3>
+    <ul class="space-y-2 text-gray-600">
+      <li class="flex items-start">
+        <span class="text-blue-600 mr-2">•</span>
+        You will receive a confirmation email within 24 hours of submission
+      </li>
+      <li class="flex items-start">
+        <span class="text-blue-600 mr-2">•</span>
+        Applications will be reviewed by the organizing committee
+      </li>
+      <li class="flex items-start">
+        <span class="text-blue-600 mr-2">•</span>
+        Selected participants will be notified 2-3 weeks after the application deadline
+      </li>
+      <li class="flex items-start">
+        <span class="text-blue-600 mr-2">•</span>
+        Workshop details including location and agenda will be shared with accepted participants
+      </li>
+    </ul>
+  </div>
+</div>
+
+      </section>
+    </div>
   </div>
 
   <!-- Footer -->
-  <footer class="bg-white border-t border-gray-200 mt-16">
+  <footer class="bg-white border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
       <!-- Footer Links + Copyright -->
-      <div class="mt-8 border-t border-gray-200 pt-6">
-        <div class="flex flex-wrap justify-center items-center text-sm">
-          <a href="#" class="text-red-600 hover:text-red-800">CRA Home</a>
-          <span class="mx-2 text-red-600">|</span>
-          <a href="#" class="text-red-600 hover:text-red-800">Contact Us</a>
-          <span class="mx-2 text-red-600">|</span>
-          <a href="#" class="text-red-600 hover:text-red-800">Accessibility Statement</a>
-          <span class="mx-2 text-red-600">|</span>
-          <a href="#" class="text-red-600 hover:text-red-800">Unsubscribe/Removal of Information</a>
-          <span class="mx-2 text-red-600">|</span>
-          <a href="#" class="text-red-600 hover:text-red-800">Terms of Use</a>
-          <!-- copyright on the same line, gray -->
-          <span class="ml-4 text-gray-600">© Copyright 2025 – CRA</span>
-        </div>
+      <div class="flex flex-wrap justify-center items-center text-sm">
+        <a href="#" class="text-red-600 hover:text-red-800">CRA Home</a>
+        <span class="mx-2 text-red-600">|</span>
+        <a href="#" class="text-red-600 hover:text-red-800">Contact Us</a>
+        <span class="mx-2 text-red-600">|</span>
+        <a href="#" class="text-red-600 hover:text-red-800">Accessibility Statement</a>
+        <span class="mx-2 text-red-600">|</span>
+        <a href="#" class="text-red-600 hover:text-red-800">Unsubscribe/Removal of Information</a>
+        <span class="mx-2 text-red-600">|</span>
+        <a href="#" class="text-red-600 hover:text-red-800">Terms of Use</a>
+        <!-- copyright on the same line, gray -->
+        <span class="ml-4 text-gray-600">© Copyright 2025 – CRA</span>
       </div>
     </div>
   </footer>
