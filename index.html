@@ -6,7 +6,25 @@
   <title>CRA - Computing Research Association</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .rainbow-gradient { background: linear-gradient(to right, #2563eb, #7c3aed, #ec4899, #ef4444, #f97316, #eab308, #22c55e, #2563eb); }
+    .rainbow-gradient { 
+      background: repeating-linear-gradient(
+        23deg,
+        #60a5fa 0px,
+        #60a5fa 8px,
+        #a78bfa 8px,
+        #a78bfa 22px,
+        #f472b6 22px,
+        #f472b6 35px,
+        #fb7185 35px,
+        #fb7185 41px,
+        #fb923c 41px,
+        #fb923c 58px,
+        #fbbf24 58px,
+        #fbbf24 73px,
+        #4ade80 73px,
+        #4ade80 86px
+      );
+    }
     .nav-item:hover { background-color: #1d4ed8; }
     .sidebar-item:hover { background-color: #e5e7eb; }
   </style>
@@ -31,43 +49,203 @@
       </div>
     </div>
   </div>
-
   <!-- Navigation -->
-  <nav class="bg-blue-700 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="flex justify-between items-center">
-        <div class="hidden lg:flex space-x-6">
-          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">ABOUT</a>
-          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">GOVERNMENT AFFAIRS</a>
-          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">COMMITTEES</a>
-          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">PROGRAMS</a>
-          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">EVENTS</a>
-          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">AWARDS</a>
-          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">RESOURCES</a>
-          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">DATA</a>
-          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">STATEMENTS/POSITIONS</a>
-          <a href="#" class="nav-item py-4 px-2 text-sm font-medium transition-colors">JOBS</a>
-        </div>
-        <button id="mobile-menu-btn" class="lg:hidden py-4 px-2">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
-      <div id="mobile-menu" class="mobile-menu lg:hidden pb-4 hidden">
-        <a href="#" class="block py-2 px-4 hover:bg-blue-600">ABOUT</a>
-        <a href="#" class="block py-2 px-4 hover:bg-blue-600">GOVERNMENT AFFAIRS</a>
-        <a href="#" class="block py-2 px-4 hover:bg-blue-600">COMMITTEES</a>
-        <a href="#" class="block py-2 px-4 hover:bg-blue-600">PROGRAMS</a>
-        <a href="#" class="block py-2 px-4 hover:bg-blue-600">EVENTS</a>
-        <a href="#" class="block py-2 px-4 hover:bg-blue-600">AWARDS</a>
-        <a href="#" class="block py-2 px-4 hover:bg-blue-600">RESOURCES</a>
-        <a href="#" class="block py-2 px-4 hover:bg-blue-600">DATA</a>
-        <a href="#" class="block py-2 px-4 hover:bg-blue-600">STATEMENTS/POSITIONS</a>
-        <a href="#" class="block py-2 px-4 hover:bg-blue-600">JOBS</a>
-      </div>
+
+  <nav class="bg-blue-700 text-white h-14" id="main-nav">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-full">
+    <div class="flex justify-between items-center h-full">
+
+      <ul class="hidden lg:flex items-center h-full space-x-2 text-xs">
+
+        <li class="relative group h-full">
+          <a href="https://cra.org/about/" class="nav-item uppercase h-full px-3 flex items-center font-medium">
+            ABOUT
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+          <ul class="absolute left-0 top-full hidden group-hover:block bg-blue-800 text-white uppercase shadow-lg py-2 min-w-[240px] rounded-none z-10">
+            <li class="relative group/sub">
+              <a href="https://cra.org/about/board-of-directors/" class="px-4 py-2 hover:bg-blue-700 flex justify-between items-center">
+                BOARD OF DIRECTORS
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+              </a>
+              <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-blue-800 text-white uppercase shadow-lg py-2 min-w-[200px] rounded-none">
+                <li><a href="https://cra.org/about/board-of-directors/#board-members" class="block px-4 py-2 hover:bg-blue-700">BOARD MEMBERS</a></li>
+                <li><a href="https://cra.org/about/board-of-directors/#executive-officers" class="block px-4 py-2 hover:bg-blue-700">EXECUTIVE OFFICERS</a></li>
+                <li><a href="https://cra.org/about/board-of-directors/#society-liaisons" class="block px-4 py-2 hover:bg-blue-700">SOCIETY LIAISONS</a></li>
+              </ul>
+            </li>
+            <li><a href="https://cra.org/about/staff/" class="block px-4 py-2 hover:bg-blue-700">STAFF</a></li>
+            <li class="relative group/sub">
+              <a href="https://cra.org/about/membership/" class="px-4 py-2 hover:bg-blue-700 flex justify-between items-center">
+                MEMBERSHIP
+                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+              </a>
+              <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-blue-800 text-white uppercase shadow-lg py-2 min-w-[180px] rounded-none">
+                <li><a href="https://cra.org/about/membership/member-list/" class="block px-4 py-2 hover:bg-blue-700">MEMBER LIST</a></li>
+                <li><a href="https://cra.org/about/membership/dues/" class="block px-4 py-2 hover:bg-blue-700">DUES</a></li>
+              </ul>
+            </li>
+            <li><a href="https://cra.org/about/strategic-plan-2021-2026/" class="block px-4 py-2 hover:bg-blue-700">STRATEGIC PLAN</a></li>
+            <li><a href="https://cra.org/about/annual-reports/" class="block px-4 py-2 hover:bg-blue-700">ANNUAL REPORTS</a></li>
+            <li><a href="https://cra.org/contact-us/" class="block px-4 py-2 hover:bg-blue-700">CONTACT US</a></li>
+            <li><a href="https://cra.org/anti-harassment-policies/" class="block px-4 py-2 hover:bg-blue-700">ANTI‑HARASSMENT POLICIES</a></li>
+            <li><a href="https://cra.org/support-cra/" class="block px-4 py-2 hover:bg-blue-700">SUPPORT CRA</a></li>
+            <li><a href="https://cra.org/privacy-policy/" class="block px-4 py-2 hover:bg-blue-700">PRIVACY POLICY</a></li>
+          </ul>
+        </li>
+
+        <li class="relative group h-full">
+          <a href="https://cra.org/government-affairs/" class="nav-item uppercase h-full px-3 flex items-center font-medium">GOVERNMENT AFFAIRS
+             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+          <ul class="absolute left-0 top-full hidden group-hover:block bg-blue-800 text-white uppercase shadow-lg py-2 min-w-[180px] rounded-none z-10">
+            <li><a href="https://cra.org/government-affairs/advocacy/" class="block px-4 py-2 hover:bg-blue-700">ADVOCACY</a></li>
+            <li><a href="https://cra.org/government-affairs/policy-issues/" class="block px-4 py-2 hover:bg-blue-700">POLICY ISSUES</a></li>
+            <li><a href="https://cra.org/government-affairs/policy-blog/" class="block px-4 py-2 hover:bg-blue-700">POLICY BLOG</a></li>
+            <li><a href="https://cra.org/government-affairs/policy-spotlight/" class="block px-4 py-2 hover:bg-blue-700">POLICY SPOTLIGHT</a></li>
+            <li><a href="https://cra.org/government-affairs/members/" class="block px-4 py-2 hover:bg-blue-700">MEMBERS</a></li>
+          </ul>
+        </li>
+
+        <li class="relative group h-full">
+          <a href="https://cra.org/committees/" class="nav-item uppercase h-full px-3 flex items-center font-medium">COMMITTEES
+             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+          <ul class="absolute left-0 top-full hidden group-hover:block bg-blue-800 text-white uppercase shadow-lg py-2 min-w-[240px] rounded-none z-10">
+            <li><a href="https://cra.org/ccc/" class="block px-4 py-2 hover:bg-blue-700">CCC</a></li>
+            <li><a href="https://cra.org/cerp/" class="block px-4 py-2 hover:bg-blue-700">CERP</a></li>
+            <li><a href="https://cra.org/cra-e/" class="block px-4 py-2 hover:bg-blue-700">CRA‑E</a></li>
+            <li><a href="https://cra.org/government-affairs/" class="block px-4 py-2 hover:bg-blue-700">GOVERNMENT AFFAIRS</a></li>
+            <li><a href="https://cra.org/cra-industry/" class="block px-4 py-2 hover:bg-blue-700">CRA‑INDUSTRY</a></li>
+            <li><a href="https://cra.org/cra-wp/" class="block px-4 py-2 hover:bg-blue-700">CRA‑WP</a></li>
+            <li><a href="https://cra.org/cra-deans-council/" class="block px-4 py-2 hover:bg-blue-700">CRA DEANS COUNCIL</a></li>
+            <li><a href="https://cra.org/committees/" class="block px-4 py-2 hover:bg-blue-700">ALL COMMITTEES &amp; WORKING GROUPS</a></li>
+          </ul>
+        </li>
+
+        <li class="relative group h-full">
+          <a href="https://cra.org/programs/" class="nav-item uppercase h-full px-3 flex items-center font-medium">PROGRAMS
+             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+          <ul class="absolute left-0 top-full hidden group-hover:block bg-blue-800 text-white uppercase shadow-lg py-2 min-w-[300px] rounded-none z-10">
+            <li><a href="https://cra.org/nsf-csgrad4us/" class="block px-4 py-2 hover:bg-blue-700">NSF CSGRAD4US</a></li>
+            <li><a href="https://cra.org/ur2phd/" class="block px-4 py-2 hover:bg-blue-700">UR2PHD</a></li>
+            <li><a href="https://cra.org/dreu/" class="block px-4 py-2 hover:bg-blue-700">DREU</a></li>
+            <li><a href="https://cra.org/dream/" class="block px-4 py-2 hover:bg-blue-700">DREAM</a></li>
+            <li><a href="https://cra.org/data-buddies/" class="block px-4 py-2 hover:bg-blue-700">DATA BUDDIES</a></li>
+            <li><a href="https://cra.org/grad-cohort-ideals/" class="block px-4 py-2 hover:bg-blue-700">GRAD COHORT FOR IDEALS</a></li>
+            <li><a href="https://cra.org/grad-cohort-for-women/" class="block px-4 py-2 hover:bg-blue-700">GRAD COHORT FOR WOMEN</a></li>
+            <li><a href="https://cra.org/cra-e-graduate-fellows/" class="block px-4 py-2 hover:bg-blue-700">CRA‑E GRADUATE FELLOWS</a></li>
+            <li><a href="https://cra.org/cra-trustworthy-ai-research-fellowship/" class="block px-4 py-2 hover:bg-blue-700">TRUSTWORTHY AI RESEARCH FELLOWSHIP</a></li>
+          </ul>
+        </li>
+
+        <li class="relative group h-full">
+          <a href="https://cra.org/events/" class="nav-item uppercase h-full px-3 flex items-center font-medium">EVENTS
+             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+          <ul class="absolute left-0 top-full hidden group-hover:block bg-blue-800 text-white uppercase shadow-lg py-2 min-w-[320px] rounded-none z-10">
+            <li><a href="https://cra.org/career-landscape-workshop/" class="block px-4 py-2 hover:bg-blue-700">CAREER LANDSCAPE WORKSHOP</a></li>
+            <li><a href="https://cra.org/conferences/" class="block px-4 py-2 hover:bg-blue-700">CONFERENCES WE SUPPORT</a></li>
+            <li><a href="https://cra.org/events/congressional-visit-day/" class="block px-4 py-2 hover:bg-blue-700">CONGRESSIONAL VISIT DAY</a></li>
+            <li><a href="https://cra.org/career-mentoring-workshop/" class="block px-4 py-2 hover:bg-blue-700">CRA CAREER MENTORING WORKSHOP</a></li>
+            <li><a href="https://cra.org/summit/" class="block px-4 py-2 hover:bg-blue-700">CRA SUMMIT</a></li>
+            <li><a href="https://cra.org/leadership-academy/" class="block px-4 py-2 hover:bg-blue-700">CRA LEADERSHIP ACADEMY</a></li>
+            <li><a href="https://cra.org/early-and-mid-career-mentoring-workshop/" class="block px-4 py-2 hover:bg-blue-700">EARLY & MID CAREER MENTORING WORKSHOP</a></li>
+            <li><a href="https://cra.org/lispi/" class="block px-4 py-2 hover:bg-blue-700">LISPI</a></li>
+            <li><a href="https://cra.org/new-chairs-workshop/" class="block px-4 py-2 hover:bg-blue-700">NEW CHAIRS WORKSHOP</a></li>
+            <li><a href="https://cra.org/nsf-level-up/" class="block px-4 py-2 hover:bg-blue-700">NSF LEVEL UP</a></li>
+            <li><a href="https://cra.org/level-up-ai/" class="block px-4 py-2 hover:bg-blue-700">NSF LEVEL UP AI</a></li>
+          </ul>
+        </li>
+
+        <li class="relative group h-full">
+          <a href="https://cra.org/awards/" class="nav-item uppercase h-full px-3 flex items-center font-medium">AWARDS
+             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+          <ul class="absolute left-0 top-full hidden group-hover:block bg-blue-800 text-white uppercase shadow-lg py-2 min-w-[400px] rounded-none z-10">
+            <li><a href="https://cra.org/awards/distinguished-service/" class="block px-4 py-2 hover:bg-blue-700">CRA DISTINGUISHED SERVICE AWARD</a></li>
+            <li><a href="https://cra.org/awards/habermann/" class="block px-4 py-2 hover:bg-blue-700">CRA A. NICO HABERMANN AWARD</a></li>
+            <li><a href="https://cra.org/awards/anita-borg/" class="block px-4 py-2 hover:bg-blue-700">CRA ANITA BORG EARLY CAREER AWARD</a></li>
+            <li><a href="https://cra.org/awards/skip-ellis/" class="block px-4 py-2 hover:bg-blue-700">CRA SKIP ELLIS EARLY CAREER AWARD</a></li>
+            <li><a href="https://cra.org/awards/outstanding-undergrad/" class="block px-4 py-2 hover:bg-blue-700">CRA OUTSTANDING UNDERGRADUATE RESEARCHER AWARD</a></li>
+            <li><a href="https://cra.org/awards/mentoring/" class="block px-4 py-2 hover:bg-blue-700">CRA UNDERGRADUATE RESEARCH FACULTY MENTORING AWARD</a></li>
+            <li><a href="https://cra.org/awards/service-to-cra/" class="block px-4 py-2 hover:bg-blue-700">SERVICE TO CRA AWARD</a></li>
+          </ul>
+        </li>
+
+        <li class="relative group h-full">
+          <a href="https://cra.org/resources/" class="nav-item uppercase h-full px-3 flex items-center font-medium">RESOURCES
+             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+          <ul class="absolute left-0 top-full hidden group-hover:block bg-blue-800 text-white uppercase shadow-lg py-2 min-w-[300px] rounded-none z-10">
+            <li><a href="https://bpcnet.org/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 hover:bg-blue-700">BPCNET RESOURCE PORTAL</a></li>
+            <li><a href="https://sparc.cra.org/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 hover:bg-blue-700">SPARC</a></li>
+            <li><a href="https://cra.org/best-practice-memos/" class="block px-4 py-2 hover:bg-blue-700">BEST PRACTICE MEMOS</a></li>
+            <li><a href="https://cra.org/quadrennial-papers/" class="block px-4 py-2 hover:bg-blue-700">CRA QUADRENNIAL PAPERS</a></li>
+            <li><a href="https://cra.org/workforce-history-reports/" class="block px-4 py-2 hover:bg-blue-700">CRA WORKFORCE & HISTORY REPORTS</a></li>
+            <li><a href="https://cra.org/research-issues-reports/" class="block px-4 py-2 hover:bg-blue-700">REPORTS ON RESEARCH ISSUES</a></li>
+            <li><a href="https://cra.org/computing-research-news/" class="block px-4 py-2 hover:bg-blue-700">COMPUTING RESEARCH NEWS</a></li>
+            <li><a href="https://cra.org/bulletin/" class="block px-4 py-2 hover:bg-blue-700">CRA BULLETIN</a></li>
+          </ul>
+        </li>
+
+        <li class="relative group h-full">
+          <a href="https://cra.org/data/" class="nav-item uppercase h-full px-3 flex items-center font-medium">DATA
+             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+          <ul class="absolute left-0 top-full hidden group-hover:block bg-blue-800 text-white uppercase shadow-lg py-2 min-w-[280px] rounded-none z-10">
+            <li><a href="https://cra.org/taulbee-survey/" class="block px-4 py-2 hover:bg-blue-700">CRA TAULBEE SURVEY</a></li>
+            <li><a href="https://bpcnet.org/statistics/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 hover:bg-blue-700">BPCNET STATISTICS & DATA HUB</a></li>
+            <li><a href="https://cra.org/data-buddies/" class="block px-4 py-2 hover:bg-blue-700">THE DATA BUDDIES PROJECT</a></li>
+            <li><a href="https://cra.org/cerp-reu-evaluation/" class="block px-4 py-2 hover:bg-blue-700">CERP REU EVALUATION</a></li>
+            <li><a href="https://cra.org/dappic/" class="block px-4 py-2 hover:bg-blue-700">DAPPIC</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://cra.org/statements-positions/" class="nav-item uppercase h-full px-3 flex items-center font-medium">
+            STATEMENTS/POSITIONS
+          </a>
+        </li>
+
+        <li class="relative group h-full">
+          <a href="https://careercenter.cra.org/" target="_blank" rel="noopener noreferrer" class="nav-item uppercase h-full px-3 flex items-center font-medium">JOBS
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+          <ul class="absolute right-0 top-full hidden group-hover:block bg-blue-800 text-white uppercase shadow-lg py-2 min-w-[180px] rounded-none z-10">
+            <li><a href="https://careercenter.cra.org/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 hover:bg-blue-700">VIEW JOBS</a></li>
+            <li><a href="https://careercenter.cra.org/post-a-job/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 hover:bg-blue-700">POST A JOB</a></li>
+            <li><a href="https://careercenter.cra.org/submit-your-cv/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 hover:bg-blue-700">SUBMIT YOUR CV</a></li>
+            <li><a href="https://cra.org/careers/" class="block px-4 py-2 hover:bg-blue-700">CRA CAREERS</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <button id="mobile-menu-btn" class="lg:hidden py-4 px-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
     </div>
-  </nav>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu lg:hidden hidden absolute top-full left-0 w-full bg-blue-700 pb-4 uppercase z-20">
+    <a href="https://cra.org/about/" class="block py-2 px-4 hover:bg-blue-600">ABOUT</a>
+    <a href="https://cra.org/government-affairs/" class="block py-2 px-4 hover:bg-blue-600">GOVERNMENT AFFAIRS</a>
+    <a href="https://cra.org/committees/" class="block py-2 px-4 hover:bg-blue-600">COMMITTEES</a>
+    <a href="https://cra.org/programs/" class="block py-2 px-4 hover:bg-blue-600">PROGRAMS</a>
+    <a href="https://cra.org/events/" class="block py-2 px-4 hover:bg-blue-600">EVENTS</a>
+    <a href="https://cra.org/awards/" class="block py-2 px-4 hover:bg-blue-600">AWARDS</a>
+    <a href="https://cra.org/resources/" class="block py-2 px-4 hover:bg-blue-600">RESOURCES</a>
+    <a href="https://cra.org/data/" class="block py-2 px-4 hover:bg-blue-600">DATA</a>
+    <a href="https://cra.org/statements-positions/" class="block py-2 px-4 hover:bg-blue-600">STATEMENTS/POSITIONS</a>
+    <a href="https://careercenter.cra.org/" target="_blank" rel="noopener noreferrer" class="block py-2 px-4 hover:bg-blue-600">JOBS</a>
+  </div>
+</nav>
+
 
   <!-- Main -->
   <div class="flex-1">
@@ -132,9 +310,8 @@
           class="w-full h-56 object-contain bg-gray-50 rounded-lg p-2"
         >
         <div>
-          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
-          <p class="text-gray-600">
-Traian Marius Truta, drawing on his extensive experience as a Full Professor of Computer Science and the School Director of the School of Computing and Analytics at Northern Kentucky University (NKU). His research spans social networks, social media, data privacy, anonymity, privacy in statistical databases, and data management, with notable projects analyzing tweet sentiments on various topics. Marius has published approximately 70 peer-reviewed papers, earning two best paper awards and almost 2,000 citations. His organizational skills are evidenced by his role in organizing the Workshop on Privacy and Anonymity in the Information Society (PAIS) for ten editions and conducting a privacy tutorial at DIMACS. As an editorial board member of the Transactions on Data Privacy journal and a participant in numerous program committees, Marius is well-versed in the academic and practical aspects of computing. His teaching portfolio includes database programming, database administration, and various programming classes, further showcasing his ability to lead and educate. This blend of research, organizational experience, and educational leadership makes Marius an ideal candidate to spearhead this project, ensuring its success and broad impact.          </p>
+          <p class="text-gray-600">Traian Marius Truta, drawing on his extensive experience as a Full Professor of Computer Science and the School Director of the School of Computing and Analytics at Northern Kentucky University (NKU). His research spans social networks, social media, data privacy, anonymity, privacy in statistical databases, and data management, with notable projects analyzing tweet sentiments on various topics. Marius has published approximately 70 peer-reviewed papers, earning two best paper awards and almost 2,000 citations. His organizational skills are evidenced by his role in organizing the Workshop on Privacy and Anonymity in the Information Society (PAIS) for ten editions and conducting a privacy tutorial at DIMACS. As an editorial board member of the Transactions on Data Privacy journal and a participant in numerous program committees, Marius is well-versed in the academic and practical aspects of computing. His teaching portfolio includes database programming, database administration, and various programming classes, further showcasing his ability to lead and educate. This blend of research, organizational experience, and educational leadership makes Marius an ideal candidate to spearhead this project, ensuring its success and broad impact.
+          </p>
         </div>
       </div>
     </div>
@@ -149,9 +326,8 @@ Traian Marius Truta, drawing on his extensive experience as a Full Professor of 
           class="w-full h-56 object-contain bg-gray-50 rounded-lg p-2"
         >
         <div>
-          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
           <p class="text-gray-600">
-           Tracy Campis the Executive Director and CEO of the Computing Research Association (CRA). Prior to joining CRA, Dr. Camp spent almost 30 years in academia (most at the Colorado School of Mines, where she founded and then led the Department of Computer Science for five years). Her research spans technical topics (wireless networks, where her group often applied AI tools), education topics (concurrent programming environments), and broadening participation in computing topics (best practices for inclusion). More than 4,000 researchers in 88 countries/regions have downloaded at least one of the software packages developed by her research group (as of June 2021) and her research articles have been cited almost 16,000 times at this time (per Google Scholar). Dr. Camp is both an ACM Fellow and an IEEE Fellow, and also PI of the LEVEL UP AI project. Her prior experiences and accomplishments indicate that this project will be a success and have broad impact.
+           Tracy Camp is the Executive Director and CEO of the Computing Research Association (CRA). Prior to joining CRA, Dr. Camp spent almost 30 years in academia (most at the Colorado School of Mines, where she founded and then led the Department of Computer Science for five years). Her research spans technical topics (wireless networks, where her group often applied AI tools), education topics (concurrent programming environments), and broadening participation in computing topics (best practices for inclusion). More than 4,000 researchers in 88 countries/regions have downloaded at least one of the software packages developed by her research group (as of June 2021) and her research articles have been cited almost 16,000 times at this time (per Google Scholar). Dr. Camp is both an ACM Fellow and an IEEE Fellow, and also PI of the LEVEL UP AI project. Her prior experiences and accomplishments indicate that this project will be a success and have broad impact.
           </p>
         </div>
       </div>
@@ -167,9 +343,8 @@ Traian Marius Truta, drawing on his extensive experience as a Full Professor of 
           class="w-full h-56 object-contain bg-gray-50 rounded-lg p-2"
         >
         <div>
-          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
           <p class="text-gray-600">
-          HongchiShi has extensive experience with teaching, research, and administration at multiple universities. He is currently a Professor of Computer Science and the Chair of the Department of Computer Science at Texas State University. His research spans parallel and distributed computing, wireless sensor networks, neural networks, and image processing. He has published over 160 peer-reviewed papers with more than 2600 citations. He has been invited by several universities to review their computing courses and curricula. He has served on editorial board of several journals, as conference or area chairs of many international conferences, and as chair or member of the organizing or technical program committees for many international conferences.
+          Hongchi Shi has extensive experience with teaching, research, and administration at multiple universities. He is currently a Professor of Computer Science and the Chair of the Department of Computer Science at Texas State University. His research spans parallel and distributed computing, wireless sensor networks, neural networks, and image processing. He has published over 160 peer-reviewed papers with more than 2600 citations. He has been invited by several universities to review their computing courses and curricula. He has served on editorial board of several journals, as conference or area chairs of many international conferences, and as chair or member of the organizing or technical program committees for many international conferences.
           </p>
         </div>
       </div>
@@ -185,9 +360,8 @@ Traian Marius Truta, drawing on his extensive experience as a Full Professor of 
           class="w-full h-56 object-contain bg-gray-50 rounded-lg p-2"
         >
         <div>
-          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
           <p class="text-gray-600">
-           ShaoenWuhas extensive academic and industry experience. He is currently a Professor and the department chair of the Department of Information Technology at Kennesaw State University. He worked as a State Farm Endowed Chair Professor at Illinois State University, the Center Director of Security and Software Engineering Research Center, an NSF I/UCRC, and Assistant Department Chair of Computer Science at Ball State University. He served on the Dean’s Faculty Council and was an advisor to the Vice Provost of Research at Ball State University. He also worked as a Staff Scientist at Adtran and a Member of the Technical Staff at Bell Laboratories.  His research spans AI, IoT, Networking, and Security. He has been an external reviewer for several PhD and Master program proposals and led the first MSIT ABET accreditation. He has served on the editorial board of several journals, as conference chair of many international conferences, and as chair or member of the organizing or technical program committees for many international conferences. In addition, he has led $10M grants funded by both federal agencies and industry.
+           Shaoen Wu has extensive academic and industry experience. He is currently a Professor and the department chair of the Department of Information Technology at Kennesaw State University. He worked as a State Farm Endowed Chair Professor at Illinois State University, the Center Director of Security and Software Engineering Research Center, an NSF I/UCRC, and Assistant Department Chair of Computer Science at Ball State University. He served on the Dean's Faculty Council and was an advisor to the Vice Provost of Research at Ball State University. He also worked as a Staff Scientist at Adtran and a Member of the Technical Staff at Bell Laboratories.  His research spans AI, IoT, Networking, and Security. He has been an external reviewer for several PhD and Master program proposals and led the first MSIT ABET accreditation. He has served on the editorial board of several journals, as conference chair of many international conferences, and as chair or member of the organizing or technical program committees for many international conferences. In addition, he has led $10M grants funded by both federal agencies and industry.
           </p>
         </div>
       </div>
@@ -203,9 +377,8 @@ Traian Marius Truta, drawing on his extensive experience as a Full Professor of 
           class="w-full h-56 object-contain bg-gray-50 rounded-lg p-2"
         >
         <div>
-          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
-          <p class="text-gray-600">
-JunxiuZhou is anAssociateProfessor at the School of Computing and Analytics at Northern Kentucky University. She is a dedicated educator and research specializing in Artificial Intelligence, Machine Learning, and Deep Learning, with a focus on applications in areas such as natural language processing, wireless network resource allocation, and computer vision. She published about 20 research papers on related topics. With over five years of teaching experience in AI, she is passionate about educating the next generation of AI technology leaders. She has designed and delivered undergraduate and graduate AI related courses that blend theoretical foundations with hands-on practical skills of AI. Beyond the classroom, Dr. Zhou has conducted dozens of interactive AI workshops for high school and middle school students from the northern Kentucky area, aiming to spark curiosity and provide early exposure to cutting-edge AI concepts.          </p>
+          <p class="text-gray-600">Junxiu Zhou is an Associate Professor at the School of Computing and Analytics at Northern Kentucky University. She is a dedicated educator and research specializing in Artificial Intelligence, Machine Learning, and Deep Learning, with a focus on applications in areas such as natural language processing, wireless network resource allocation, and computer vision. She published about 20 research papers on related topics. With over five years of teaching experience in AI, she is passionate about educating the next generation of AI technology leaders. She has designed and delivered undergraduate and graduate AI related courses that blend theoretical foundations with hands-on practical skills of AI. Beyond the classroom, Dr. Zhou has conducted dozens of interactive AI workshops for high school and middle school students from the northern Kentucky area, aiming to spark curiosity and provide early exposure to cutting-edge AI concepts.
+          </p>
         </div>
       </div>
     </div>
@@ -220,9 +393,8 @@ JunxiuZhou is anAssociateProfessor at the School of Computing and Analytics at N
           class="w-full h-56 object-contain bg-gray-50 rounded-lg p-2"
         >
         <div>
-          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
           <p class="text-gray-600">
-            Mary Lou Maheris the Director of Research Community Initiatives at CRA. In this role she is the Director of the Computing Community Consortium (CCC) Council and leads the CCC visioning activities, including roundtable discussions and workshops. She joined CRA in 2024 following 12 years at UNC Charlotte. At UNC Charlotte she was the Director of the College of Computing and Informatics (CCI) Center for Education Innovation and Research, co-Director of the Center for Humane AI Studies, and Director of the CCI Integrated Critical Core. In 2023, she was PI on an NSF-funded Conference award on Increasing Capacity and Diversity of AI Education, funded by the DGE. Her prior experiences in running Centers, workshops, and Communities of Practice combined with her research interests in inclusive AI Literacy will ensure the success of this Conference project.
+            Mary Lou Maher is the Director of Research Community Initiatives at CRA. In this role she is the Director of the Computing Community Consortium (CCC) Council and leads the CCC visioning activities, including roundtable discussions and workshops. She joined CRA in 2024 following 12 years at UNC Charlotte. At UNC Charlotte she was the Director of the College of Computing and Informatics (CCI) Center for Education Innovation and Research, co-Director of the Center for Humane AI Studies, and Director of the CCI Integrated Critical Core. In 2023, she was PI on an NSF-funded Conference award on Increasing Capacity and Diversity of AI Education, funded by the DGE. Her prior experiences in running Centers, workshops, and Communities of Practice combined with her research interests in inclusive AI Literacy will ensure the success of this Conference project.
           </p>
         </div>
       </div>
@@ -238,9 +410,8 @@ JunxiuZhou is anAssociateProfessor at the School of Computing and Analytics at N
           class="w-full h-56 object-contain bg-gray-50 rounded-lg p-2"
         >
         <div>
-          <h4 class="font-semibold text-gray-700 mb-2">Bio</h4>
           <p class="text-gray-600">
-         Chloe Yixin Xieis an Assistant Professor with the College of Computing and Software Engineering at Kennesaw State University since 2022. Chloe has solid experience organizing events, such as bi-weekly invited research talks and the ACMSE conference.  Her primary research and teaching expertise is in AI, health technology, and bioinformatics. She will lead the planning of the discussions, provide specialized knowledge or skills that are critical to the project's success, and work with the PIs and other team members to align efforts and ensure progress.
+         Chloe Yixin Xie is an Assistant Professor with the College of Computing and Software Engineering at Kennesaw State University since 2022. Chloe has solid experience organizing events, such as bi-weekly invited research talks and the ACMSE conference.  Her primary research and teaching expertise is in AI, health technology, and bioinformatics. She will lead the planning of the discussions, provide specialized knowledge or skills that are critical to the project's success, and work with the PIs and other team members to align efforts and ensure progress.
           </p>
         </div>
       </div>
@@ -654,16 +825,16 @@ JunxiuZhou is anAssociateProfessor at the School of Computing and Analytics at N
   <footer class="bg-white border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
       <!-- Footer Links + Copyright -->
-      <div class="flex flex-wrap justify-center items-center text-sm">
-        <a href="#" class="text-red-600 hover:text-red-800">CRA Home</a>
+       <div class="flex flex-wrap justify-center items-center text-sm">
+        <a href="https://cra.org/" class="text-red-600 hover:text-red-800">CRA Home</a>
         <span class="mx-2 text-red-600">|</span>
-        <a href="#" class="text-red-600 hover:text-red-800">Contact Us</a>
+        <a href="https://cra.org/contact/" class="text-red-600 hover:text-red-800">Contact Us</a>
         <span class="mx-2 text-red-600">|</span>
-        <a href="#" class="text-red-600 hover:text-red-800">Accessibility Statement</a>
+        <a href="https://cra.org/accessibility-statement/" class="text-red-600 hover:text-red-800">Accessibility Statement</a>
         <span class="mx-2 text-red-600">|</span>
-        <a href="#" class="text-red-600 hover:text-red-800">Unsubscribe/Removal of Information</a>
+        <a href="https://computingresearch.wufoo.com/forms/sdd6bxc0j0jzao/" class="text-red-600 hover:text-red-800">Unsubscribe/Removal of Information</a>
         <span class="mx-2 text-red-600">|</span>
-        <a href="#" class="text-red-600 hover:text-red-800">Terms of Use</a>
+        <a href="https://cra.org/disclaimer/" class="text-red-600 hover:text-red-800">Terms of Use</a>
         <!-- copyright on the same line, gray -->
         <span class="ml-4 text-gray-600">© Copyright 2025 – CRA</span>
       </div>
